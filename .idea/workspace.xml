@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4467710-b66a-4c7b-bf15-5ed7e72708ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/AntAgent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Ant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/observables/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/observables/Subject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/AntController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/MainContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/MainContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/AntAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/AntAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/http/HttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/http/HttpClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/agents.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/agents.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/server.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/server.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +26,7 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -75,6 +84,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.com.fga.agents" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/agents/src/main/java/br/com/fga" />
       <recent name="$PROJECT_DIR$/server/src/main/resources" />
@@ -87,11 +99,11 @@
       <recent name="$PROJECT_DIR$/server/src/main/resources/static" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.fga.agents" />
       <recent name="org.fga.tcc.services.impl" />
       <recent name="org.fga.tcc.services" />
       <recent name="org.fga.tcc.word2vec" />
       <recent name="org.fga.tcc.utils" />
-      <recent name="org.fga.tcc.sentimental.review" />
     </key>
   </component>
   <component name="RunManager" selected="Application.HttpClient">

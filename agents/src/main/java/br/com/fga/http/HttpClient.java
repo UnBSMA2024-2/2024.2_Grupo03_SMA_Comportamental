@@ -36,7 +36,9 @@ public class HttpClient {
         }
     }
 
-    public static void post(String path, Object data) {
+    public static int post(String path, Object data) {
+        int responseCode = -1;
+
         try {
             URI uri = new URI(path);
             URL url = uri.toURL();
@@ -49,16 +51,14 @@ public class HttpClient {
                 os.write(input, 0, input.length);
             }
 
-            // Verificando a resposta
-            int responseCode = conn.getResponseCode();
-            System.out.println("Código de resposta: " + responseCode);
-
-            assert responseCode == 200;
+            responseCode = conn.getResponseCode();
 
             conn.disconnect();
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        return responseCode;
     }
 
     private static HttpURLConnection getHttpURLConnection(URL url, String method) throws IOException {
