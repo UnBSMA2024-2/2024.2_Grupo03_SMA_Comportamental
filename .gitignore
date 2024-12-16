@@ -40,3 +40,6 @@ build/
 ### JADE ###
 APDescription.txt
 MTPs-Main-Container.txt
+
+### LOGS ###
+/logs
