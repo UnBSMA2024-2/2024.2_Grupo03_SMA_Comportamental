@@ -1,5 +1,6 @@
 package br.com.fga.agents;
 
+import br.com.fga.exceptions.AgentArgsException;
 import br.com.fga.http.HttpClient;
 import br.com.fga.models.Ant;
 import br.com.fga.services.AgentService;
@@ -31,8 +32,30 @@ public class AntAgent extends Agent {
 
     @Override
     protected void setup() {
-        ant = new Ant(10, 10);
+        Object[] args = getArguments();
 
+        if (args == null || args.length != 2) {
+            throw new AgentArgsException("Erro no número de parâmentros.");
+        }
+
+        Integer positionX = (Integer) args[0];
+        Integer positionY = (Integer) args[1];
+
+        ant = new Ant(positionX, positionY);
+
+        DFAgentDescription dfd = getDfAgentDescription();
+
+        try {
+            DFService.register(this, dfd);
+        } catch (FIPAException e) {
+            throw new RuntimeException(e);
+        }
+
+        addBehaviour(new NotifyBirthBehaviour());
+        addBehaviour(new WalkBehaviour());
+    }
+
+    private DFAgentDescription getDfAgentDescription() {
         DFAgentDescription dfd = new DFAgentDescription();
         dfd.setName(getAID());
 
@@ -46,15 +69,7 @@ public class AntAgent extends Agent {
 
         dfd.addServices(sdExplore);
         dfd.addServices(sdPheromone);
-
-        try {
-            DFService.register(this, dfd);
-        } catch (FIPAException e) {
-            throw new RuntimeException(e);
-        }
-
-        addBehaviour(new NotifyBirthBehaviour());
-        addBehaviour(new WalkBehaviour());
+        return dfd;
     }
 
     @Override

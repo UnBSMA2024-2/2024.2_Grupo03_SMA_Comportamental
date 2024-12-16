@@ -4,6 +4,7 @@ import br.com.fga.agents.AntAgent;
 import br.com.fga.agents.HelloWorldAgent;
 import br.com.fga.services.AgentService;
 import br.com.fga.services.impl.AgentServiceImpl;
+import br.com.fga.utils.ThreadUtils;
 import jade.wrapper.AgentController;
 import jade.wrapper.StaleProxyException;
 
@@ -22,13 +23,13 @@ public class MainContainer {
             helloWorldAgentController.start();
 
             for (int i = 0; i < 20; i++) {
-                AgentController antAgentController = agentService.createAgent("AntAgent" + i, AntAgent.class.getName(), null);
+                AgentController antAgentController = agentService
+                        .createAgent("AntAgent" + i, AntAgent.class.getName(), new Object[] { 0, 0 });
                 antAgentController.start();
-                Thread.sleep(5000);
+
+                ThreadUtils.sleep(5);
             }
         } catch (StaleProxyException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
