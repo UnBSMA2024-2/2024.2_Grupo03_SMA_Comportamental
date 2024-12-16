@@ -13,7 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
-public abstract class Vehicle implements Serializable {
+public class Vehicle implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 2031264515899704974L;

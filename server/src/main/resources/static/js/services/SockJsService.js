@@ -21,6 +21,13 @@ class SockJsService {
             });
         };
 
+        this._stompClient.onConnect = (frame) => {
+            console.log('Connected: ' + frame);
+            this._stompClient.subscribe('/topic/simulation/update', (message) => {
+                console.log(JSON.parse(message.body));
+            });
+        };
+
         this._stompClient.onWebSocketError = (error) => {
             console.error('Error with websocket', error);
         };

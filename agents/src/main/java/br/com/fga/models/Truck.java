@@ -13,6 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class Truck extends Vehicle {
+
     @Serial
     private static final long serialVersionUID = 5753535523474185359L;
 

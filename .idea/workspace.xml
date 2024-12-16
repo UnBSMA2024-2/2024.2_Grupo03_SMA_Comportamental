@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4467710-b66a-4c7b-bf15-5ed7e72708ea" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/SimulationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/MainContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/MainContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/AntAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Ant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/AntController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/AntController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/http/HttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/http/HttpClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/mock/SimulatorData.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/mock/SimulatorData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/mock/VehicleData.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/mock/VehicleData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Truck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/VehicleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/resources/static/js/services/SockJsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/static/js/services/SockJsService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,14 +101,14 @@
       <recent name="$PROJECT_DIR$/server/src/main/resources/static" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.fga.controllers" />
       <recent name="br.com.fga.agents" />
       <recent name="org.fga.tcc.services.impl" />
       <recent name="org.fga.tcc.services" />
       <recent name="org.fga.tcc.word2vec" />
-      <recent name="org.fga.tcc.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HttpClient">
+  <component name="RunManager" selected="Application.DemoApplication">
     <configuration name="DemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.fga.DemoApplication" />
       <module name="server" />
@@ -169,9 +175,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HttpClient" />
-        <item itemvalue="Application.MainContainer" />
         <item itemvalue="Application.DemoApplication" />
+        <item itemvalue="Application.MainContainer" />
+        <item itemvalue="Application.HttpClient" />
         <item itemvalue="Makefile Target.run" />
         <item itemvalue="Makefile Target.build-and-run" />
       </list>
@@ -194,16 +200,5 @@
       <updated>1723319350746</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Truck.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
