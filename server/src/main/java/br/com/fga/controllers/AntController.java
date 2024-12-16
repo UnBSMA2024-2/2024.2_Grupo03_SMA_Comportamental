@@ -19,7 +19,7 @@ public class AntController {
     private SimpMessagingTemplate simpMessagingTemplate;
 
     @PostMapping
-    public ResponseEntity<Void> notifyAntBirth(@RequestBody List<Ant> ants) {
+    public ResponseEntity<Void> notifyAntBirth(@RequestBody List<String> ants) {
         simpMessagingTemplate.convertAndSend("/topic/ants/updates", ants);
         System.out.println("recebi");
         return ResponseEntity.ok().build();

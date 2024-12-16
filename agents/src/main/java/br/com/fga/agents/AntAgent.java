@@ -2,13 +2,21 @@ package br.com.fga.agents;
 
 import br.com.fga.http.HttpClient;
 import br.com.fga.models.Ant;
+import br.com.fga.services.AgentService;
+import br.com.fga.services.impl.AgentServiceImpl;
+import br.com.fga.utils.ThreadUtils;
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.OneShotBehaviour;
+import jade.domain.DFService;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.ServiceDescription;
+import jade.domain.FIPAException;
 
 import java.io.Serial;
 import java.net.ConnectException;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -19,12 +27,45 @@ public class AntAgent extends Agent {
 
     private Ant ant;
 
+    private final AgentService agentService = AgentServiceImpl.getInstance();
+
     @Override
     protected void setup() {
         ant = new Ant(10, 10);
 
+        DFAgentDescription dfd = new DFAgentDescription();
+        dfd.setName(getAID());
+
+        ServiceDescription sdExplore = new ServiceDescription();
+        sdExplore.setType("explore-map-service");
+        sdExplore.setName("Explore-Map-Service");
+
+        ServiceDescription sdPheromone = new ServiceDescription();
+        sdPheromone.setType("release-pheromone-service");
+        sdPheromone.setName("Release-Pheromone-Service");
+
+        dfd.addServices(sdExplore);
+        dfd.addServices(sdPheromone);
+
+        try {
+            DFService.register(this, dfd);
+        } catch (FIPAException e) {
+            throw new RuntimeException(e);
+        }
+
         addBehaviour(new NotifyBirthBehaviour());
         addBehaviour(new WalkBehaviour());
+    }
+
+    @Override
+    protected void takeDown() {
+        try {
+            DFService.deregister(this);
+
+            // TODO: enviar via POST a lista de formigas atualizada
+        } catch (FIPAException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private class NotifyBirthBehaviour extends OneShotBehaviour {
@@ -34,14 +75,18 @@ public class AntAgent extends Agent {
 
         @Override
         public void action() {
-            int responseCode = HttpClient.post("http://localhost:8080/ants", List.of(ant));
+            DFAgentDescription[] ants = agentService.search(getAgent(), "explore-map-service");
 
-            if (responseCode != 200) {
-                try {
-                    Thread.sleep(1000);
+            if (ants.length > 0) {
+                List<String> agentsName = Arrays.stream(ants)
+                        .map(it -> it.getName().getLocalName())
+                        .toList();
+
+                int responseCode = HttpClient.post("http://localhost:8080/ants", agentsName);
+
+                if (responseCode != 200) {
+                    ThreadUtils.sleep(5);
                     action();
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
                 }
             }
         }

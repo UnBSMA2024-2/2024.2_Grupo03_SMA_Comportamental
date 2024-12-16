@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4467710-b66a-4c7b-bf15-5ed7e72708ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Ant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/observables/Observer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/observables/Subject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/AntController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/utils/ThreadUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/MainContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/MainContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/AntAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/AntAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/http/HttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/http/HttpClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/agents.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/agents.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/server.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/server.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/services/AgentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/services/AgentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/services/impl/AgentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/services/impl/AgentServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,43 +41,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.DemoApplication.executor": "Run",
-    "Application.DeputeServiceImpl.executor": "Run",
-    "Application.DeputesCsvToEntityImpl.executor": "Run",
-    "Application.DeputyServiceImpl.executor": "Run",
-    "Application.FetchCsv.executor": "Run",
-    "Application.FetchJson.executor": "Run",
-    "Application.GenerateTxtModel.executor": "Run",
-    "Application.HttpClient.executor": "Run",
-    "Application.ImdbReviewClassificationRNN.executor": "Debug",
-    "Application.MainContainer.executor": "Run",
-    "Application.PrepareWordVector.executor": "Run",
-    "Application.TestNews.executor": "Run",
-    "Application.TrainNews.executor": "Run",
-    "Application.VoteServiceImpl.executor": "Run",
-    "JUnit.DemoApplicationTests (1).executor": "Run",
-    "JUnit.DemoApplicationTests.executor": "Run",
-    "Makefile Target.build-and-run.executor": "Run",
-    "Makefile Target.run.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.agents [clean,install].executor": "Run",
-    "Maven.politics-agents [clean,install].executor": "Run",
-    "Maven.server [clean,install].executor": "Run",
-    "Maven.truck-simulator [clean,install].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "ant-agents",
-    "jdk.selected.JAVA_MODULE": "21",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/douglas/Documentos/www/sistemas-multiagentes/truck-simulator/agents/src/main/java/br/com/fga",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.DemoApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DeputeServiceImpl.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DeputesCsvToEntityImpl.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DeputyServiceImpl.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FetchCsv.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FetchJson.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GenerateTxtModel.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HttpClient.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ImdbReviewClassificationRNN.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.MainContainer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PrepareWordVector.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestNews.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TrainNews.executor&quot;: &quot;Run&quot;,
+    &quot;Application.VoteServiceImpl.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DemoApplicationTests (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DemoApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.build-and-run.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.run.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.agents [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.politics-agents [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.server [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.truck-simulator [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;ant-agents&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/douglas/Documentos/www/sistemas-multiagentes/truck-simulator/agents/src/main/java/br/com/fga&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="br.com.fga.agents" />
