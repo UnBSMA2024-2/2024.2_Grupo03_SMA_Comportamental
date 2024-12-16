@@ -18,8 +18,8 @@ public class Truck extends Vehicle {
 
     private Integer capacity;
 
-    public Truck(Double speed, String color, Integer capacity) {
-        super(UUID.randomUUID(), speed, color);
+    public Truck(String name, Double speed, String color, Integer capacity, City startCity) {
+        super(UUID.randomUUID(),name, speed, color, startCity);
         this.capacity = capacity;
     }
 }

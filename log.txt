@@ -1,0 +1,542 @@
+Dec 16, 2024 6:07:44 AM jade.core.Runtime beginContainer
+INFO: ----------------------------------
+    This is JADE 4.3.3 - revision 6726 of 2014/12/09 09:33:02
+    downloaded in Open Source, under LGPL restrictions,
+    at http://jade.tilab.com/
+----------------------------------------
+Dec 16, 2024 6:07:44 AM jade.imtp.leap.LEAPIMTPManager initialize
+INFO: Listening for intra-platform commands on address:
+- jicp://172.17.0.1:1099
+
+Dec 16, 2024 6:07:45 AM jade.core.BaseService init
+INFO: Service jade.core.management.AgentManagement initialized
+Dec 16, 2024 6:07:45 AM jade.core.BaseService init
+INFO: Service jade.core.messaging.Messaging initialized
+Dec 16, 2024 6:07:45 AM jade.core.BaseService init
+INFO: Service jade.core.resource.ResourceManagement initialized
+Dec 16, 2024 6:07:45 AM jade.core.BaseService init
+INFO: Service jade.core.mobility.AgentMobility initialized
+Dec 16, 2024 6:07:45 AM jade.core.BaseService init
+INFO: Service jade.core.event.Notification initialized
+Dec 16, 2024 6:07:45 AM jade.mtp.http.HTTPServer <init>
+INFO: HTTP-MTP Using XML parser com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser
+Dec 16, 2024 6:07:45 AM jade.core.messaging.MessagingService boot
+INFO: MTP addresses:
+http://KATHLYN.:7778/acc
+Dec 16, 2024 6:07:45 AM jade.core.AgentContainerImpl joinPlatform
+INFO: --------------------------------------
+Agent container Main-Container@172.17.0.1 is ready.
+--------------------------------------------
+Container criado com sucesso.
+Agente mestre criado e iniciado.
+
+Agente mestre iniciado.
+Total de agentes: 3
+Agente TruckAgent_Alvin criado e iniciado.
+
+Agente TruckAgent_Theodore criado e iniciado.
+
+Caminhão inicializado: Alvin
+Agente TruckAgent_Simon criado e iniciado.
+
+Caminhão inicializado: Theodore
+Iteração 1/5 para Alvin
+Alvin está explorando as rotas da cidade Brasília
+Rotas disponíveis para Alvin: [Goiânia, São Paulo]
+Iteração 1/5 para Theodore
+Theodore está explorando as rotas da cidade Goiânia
+Rotas disponíveis para Theodore: [Brasília, São Paulo]
+Caminhão inicializado: Simon
+Iteração 1/5 para Simon
+Simon está explorando as rotas da cidade São Paulo
+Rotas disponíveis para Simon: [Brasília, Goiânia]
+Simon irá para Brasília?
+Distância: 14.142135623730951
+Feromônio: 1.0
+Probabilidade: 0.0303030303030303
+Alvin irá para Goiânia?
+Distância: 7.0710678118654755
+Feromônio: 1.0
+Probabilidade: 0.9696969696969696
+Alvin irá para São Paulo?
+Distância: 14.142135623730951
+Feromônio: 1.0
+Probabilidade: 0.0303030303030303
+Alvin está indo para a cidade Goiânia
+Iteração 1/5 para Alvin
+Alvin está explorando as rotas da cidade Goiânia
+Rotas disponíveis para Alvin: [São Paulo]
+Alvin irá para São Paulo?
+Distância: 7.0710678118654755
+Feromônio: 1.0
+Probabilidade: 1.0
+Alvin está indo para a cidade São Paulo
+Iteração 1/5 para Alvin
+Alvin está explorando as rotas da cidade São Paulo
+Rotas disponíveis para Alvin: []
+Não há mais cidades para visitar.
+Theodore irá para Brasília?
+Distância: 7.0710678118654755
+Feromônio: 1.0
+Probabilidade: 0.5
+Theodore irá para São Paulo?
+Distância: 7.0710678118654755
+Feromônio: 1.0
+Probabilidade: 0.5
+Theodore está indo para a cidade Brasília
+Alvin está esperando para atualizar (ou não) o feromônio.
+Simon irá para Goiânia?
+Distância: 7.0710678118654755
+Feromônio: 1.0
+Probabilidade: 0.9696969696969696
+Simon está indo para a cidade Goiânia
+Iteração 1/5 para Theodore
+Mensagem recebida:
+O caminhão TruckAgent_Alvin percorreu 14.142135623730951 km no total.
+Theodore está explorando as rotas da cidade Brasília
+Rotas disponíveis para Theodore: [São Paulo]
+Theodore irá para São Paulo?
+Distância: 14.142135623730951
+Feromônio: 1.0
+Probabilidade: 1.0
+Theodore está indo para a cidade São Paulo
+Iteração 1/5 para Simon
+Simon está explorando as rotas da cidade Goiânia
+Rotas disponíveis para Simon: [Brasília]
+Simon irá para Brasília?
+Distância: 7.0710678118654755
+Feromônio: 1.0
+Probabilidade: 1.0
+Simon está indo para a cidade Brasília
+Iteração 1/5 para Simon
+Simon está explorando as rotas da cidade Brasília
+Rotas disponíveis para Simon: []
+Não há mais cidades para visitar.
+Simon está esperando para atualizar (ou não) o feromônio.
+Iteração 1/5 para Theodore
+Theodore está explorando as rotas da cidade São Paulo
+Rotas disponíveis para Theodore: []
+Não há mais cidades para visitar.
+Theodore está esperando para atualizar (ou não) o feromônio.
+Mensagem recebida:
+O caminhão TruckAgent_Simon percorreu 14.142135623730951 km no total.
+Mensagem recebida:
+O caminhão TruckAgent_Theodore percorreu 21.213203435596427 km no total.
+Todos os agentes completaram a rota.
+Melhor caminhão: TruckAgent_Simon
+Enviando comando para TruckAgent_Simon atualizar os feromônios.
+Enviando comando para TruckAgent_Alvin não fazer nada.
+Simon está atualizando o feromônio.
+Enviando comando para TruckAgent_Theodore não fazer nada.
+Theodore não precisa atualizar o feromônio. Mas está esperando os feromônios serem atualizados.
+Alvin não precisa atualizar o feromônio. Mas está esperando os feromônios serem atualizados.
+Simon atualizou o feromônio da rota Brasília -> Goiânia para 0.5
+Simon atualizou o feromônio da rota Brasília -> São Paulo para 0.5
+Simon atualizou o feromônio da rota Goiânia -> Brasília para 1.5
+Simon atualizou o feromônio da rota Goiânia -> São Paulo para 0.5
+Simon atualizou o feromônio da rota São Paulo -> Brasília para 0.5
+Simon atualizou o feromônio da rota São Paulo -> Goiânia para 1.5
+Simon está pronto para a próxima iteração.
+Alvin está pronto para a próxima iteração.
+Theodore está pronto para a próxima iteração.
+Iteração 2/5 para Simon
+Simon está explorando as rotas da cidade Brasília
+Rotas disponíveis para Simon: [Goiânia, São Paulo]
+Simon irá para Goiânia?
+Distância: 7.0710678118654755
+Feromônio: 0.5
+Probabilidade: 0.9696969696969696
+Simon irá para São Paulo?
+Distância: 14.142135623730951
+Feromônio: 0.5
+Probabilidade: 0.0303030303030303
+Simon está indo para a cidade Goiânia
+Iteração 2/5 para Simon
+Simon está explorando as rotas da cidade Goiânia
+Rotas disponíveis para Simon: [São Paulo]
+Iteração 2/5 para Alvin
+Alvin está explorando as rotas da cidade São Paulo
+Simon irá para São Paulo?
+Distância: 7.0710678118654755
+Feromônio: 0.5
+Probabilidade: 1.0
+Rotas disponíveis para Alvin: [Brasília, Goiânia]
+Simon está indo para a cidade São Paulo
+Iteração 2/5 para Simon
+Alvin irá para Brasília?
+Distância: 14.142135623730951
+Feromônio: 0.5
+Probabilidade: 0.010309278350515464
+Simon está explorando as rotas da cidade São Paulo
+Iteração 2/5 para Theodore
+Rotas disponíveis para Simon: []
+Não há mais cidades para visitar.
+Theodore está explorando as rotas da cidade São Paulo
+Rotas disponíveis para Theodore: [Brasília, Goiânia]
+Theodore irá para Brasília?
+Distância: 14.142135623730951
+Feromônio: 0.5
+Probabilidade: 0.010309278350515464
+Simon está esperando para atualizar (ou não) o feromônio.
+Theodore irá para Goiânia?
+Distância: 7.0710678118654755
+Feromônio: 1.5
+Probabilidade: 0.9896907216494846
+Theodore está indo para a cidade Goiânia
+Mensagem recebida:
+O caminhão TruckAgent_Simon percorreu 14.142135623730951 km no total.
+Iteração 2/5 para Theodore
+Theodore está explorando as rotas da cidade Goiânia
+Rotas disponíveis para Theodore: [Brasília]
+Theodore irá para Brasília?
+Distância: 7.0710678118654755
+Feromônio: 1.5
+Probabilidade: 1.0
+Theodore está indo para a cidade Brasília
+Iteração 2/5 para Theodore
+Theodore está explorando as rotas da cidade Brasília
+Rotas disponíveis para Theodore: []
+Não há mais cidades para visitar.
+Theodore está esperando para atualizar (ou não) o feromônio.
+Mensagem recebida:
+O caminhão TruckAgent_Theodore percorreu 14.142135623730951 km no total.
+Simon está esperando para atualizar (ou não) o feromônio.
+Alvin irá para Goiânia?
+Distância: 7.0710678118654755
+Feromônio: 1.5
+Probabilidade: 0.9896907216494846
+Alvin está indo para a cidade Goiânia
+Iteração 2/5 para Alvin
+Alvin está explorando as rotas da cidade Goiânia
+Rotas disponíveis para Alvin: [Brasília]
+Alvin irá para Brasília?
+Distância: 7.0710678118654755
+Feromônio: 1.5
+Probabilidade: 1.0
+Alvin está indo para a cidade Brasília
+Iteração 2/5 para Alvin
+Alvin está explorando as rotas da cidade Brasília
+Rotas disponíveis para Alvin: []
+Não há mais cidades para visitar.
+Alvin está esperando para atualizar (ou não) o feromônio.
+Mensagem recebida:
+O caminhão TruckAgent_Alvin percorreu 14.142135623730951 km no total.
+Todos os agentes completaram a rota.
+Melhor caminhão: TruckAgent_Simon
+Enviando comando para TruckAgent_Simon atualizar os feromônios.
+Enviando comando para TruckAgent_Alvin não fazer nada.
+Enviando comando para TruckAgent_Theodore não fazer nada.
+Alvin não precisa atualizar o feromônio. Mas está esperando os feromônios serem atualizados.
+Theodore não precisa atualizar o feromônio. Mas está esperando os feromônios serem atualizados.
+Simon está atualizando o feromônio.
+Simon atualizou o feromônio da rota Brasília -> Goiânia para 1.25
+Simon atualizou o feromônio da rota Brasília -> São Paulo para 0.25
+Simon atualizou o feromônio da rota Goiânia -> Brasília para 0.75
+Simon atualizou o feromônio da rota Goiânia -> São Paulo para 1.25
+Simon atualizou o feromônio da rota São Paulo -> Brasília para 0.25
+Simon atualizou o feromônio da rota São Paulo -> Goiânia para 0.75
+Simon está pronto para a próxima iteração.
+Iteração 3/5 para Simon
+Simon está explorando as rotas da cidade São Paulo
+Rotas disponíveis para Simon: [Brasília, Goiânia]
+Simon irá para Brasília?
+Distância: 14.142135623730951
+Feromônio: 0.25
+Probabilidade: 0.010309278350515464
+Simon irá para Goiânia?
+Distância: 7.0710678118654755
+Feromônio: 0.75
+Probabilidade: 0.9896907216494846
+Simon está indo para a cidade Goiânia
+Iteração 3/5 para Simon
+Simon está explorando as rotas da cidade Goiânia
+Rotas disponíveis para Simon: [Brasília]
+Simon irá para Brasília?
+Distância: 7.0710678118654755
+Feromônio: 0.75
+Probabilidade: 1.0
+Simon está indo para a cidade Brasília
+Iteração 3/5 para Simon
+Simon está explorando as rotas da cidade Brasília
+Rotas disponíveis para Simon: []
+Não há mais cidades para visitar.
+Simon está esperando para atualizar (ou não) o feromônio.
+Simon está esperando para atualizar (ou não) o feromônio.
+Alvin está pronto para a próxima iteração.
+Mensagem recebida:
+O caminhão TruckAgent_Simon percorreu 14.142135623730951 km no total.
+Iteração 3/5 para Alvin
+Alvin está explorando as rotas da cidade Brasília
+Rotas disponíveis para Alvin: [Goiânia, São Paulo]
+Theodore está pronto para a próxima iteração.
+Iteração 3/5 para Theodore
+Alvin irá para Goiânia?
+Distância: 7.0710678118654755
+Feromônio: 1.25
+Probabilidade: 0.9937888198757764
+Theodore está explorando as rotas da cidade Brasília
+Alvin irá para São Paulo?
+Distância: 14.142135623730951
+Feromônio: 0.25
+Probabilidade: 0.006211180124223603
+Rotas disponíveis para Theodore: [Goiânia, São Paulo]
+Alvin está indo para a cidade Goiânia
+Iteração 3/5 para Alvin
+Theodore irá para Goiânia?
+Distância: 7.0710678118654755
+Feromônio: 1.25
+Probabilidade: 0.9937888198757764
+Alvin está explorando as rotas da cidade Goiânia
+Theodore irá para São Paulo?
+Distância: 14.142135623730951
+Feromônio: 0.25
+Probabilidade: 0.006211180124223603
+Rotas disponíveis para Alvin: [São Paulo]
+Theodore está indo para a cidade Goiânia
+Iteração 3/5 para Theodore
+Alvin irá para São Paulo?
+Distância: 7.0710678118654755
+Feromônio: 1.25
+Probabilidade: 1.0
+Theodore está explorando as rotas da cidade Goiânia
+Alvin está indo para a cidade São Paulo
+Rotas disponíveis para Theodore: [São Paulo]
+Iteração 3/5 para Alvin
+Alvin está explorando as rotas da cidade São Paulo
+Theodore irá para São Paulo?
+Distância: 7.0710678118654755
+Feromônio: 1.25
+Probabilidade: 1.0
+Rotas disponíveis para Alvin: []
+Não há mais cidades para visitar.
+Theodore está indo para a cidade São Paulo
+Iteração 3/5 para Theodore
+Theodore está explorando as rotas da cidade São Paulo
+Rotas disponíveis para Theodore: []
+Não há mais cidades para visitar.
+Alvin está esperando para atualizar (ou não) o feromônio.
+Theodore está esperando para atualizar (ou não) o feromônio.
+Mensagem recebida:
+O caminhão TruckAgent_Alvin percorreu 14.142135623730951 km no total.
+Mensagem recebida:
+O caminhão TruckAgent_Theodore percorreu 14.142135623730951 km no total.
+Todos os agentes completaram a rota.
+Melhor caminhão: TruckAgent_Simon
+Enviando comando para TruckAgent_Simon atualizar os feromônios.
+Enviando comando para TruckAgent_Alvin não fazer nada.
+Simon está atualizando o feromônio.
+Enviando comando para TruckAgent_Theodore não fazer nada.
+Alvin não precisa atualizar o feromônio. Mas está esperando os feromônios serem atualizados.
+Theodore não precisa atualizar o feromônio. Mas está esperando os feromônios serem atualizados.
+Simon atualizou o feromônio da rota Brasília -> Goiânia para 0.625
+Simon atualizou o feromônio da rota Brasília -> São Paulo para 0.125
+Simon atualizou o feromônio da rota Goiânia -> Brasília para 1.375
+Simon atualizou o feromônio da rota Goiânia -> São Paulo para 0.625
+Simon atualizou o feromônio da rota São Paulo -> Brasília para 0.125
+Simon atualizou o feromônio da rota São Paulo -> Goiânia para 1.375
+Simon está pronto para a próxima iteração.
+Iteração 4/5 para Simon
+Simon está explorando as rotas da cidade Brasília
+Alvin está pronto para a próxima iteração.
+Rotas disponíveis para Simon: [Goiânia, São Paulo]
+Iteração 4/5 para Alvin
+Simon irá para Goiânia?
+Distância: 7.0710678118654755
+Feromônio: 0.625
+Probabilidade: 0.9937888198757764
+Theodore está pronto para a próxima iteração.
+Iteração 4/5 para Theodore
+Theodore está explorando as rotas da cidade São Paulo
+Rotas disponíveis para Theodore: [Brasília, Goiânia]
+Theodore irá para Brasília?
+Distância: 14.142135623730951
+Feromônio: 0.125
+Probabilidade: 0.0028328611898016994
+Theodore irá para Goiânia?
+Distância: 7.0710678118654755
+Feromônio: 1.375
+Probabilidade: 0.9971671388101983
+Theodore está indo para a cidade Goiânia
+Alvin está explorando as rotas da cidade São Paulo
+Simon irá para São Paulo?
+Distância: 14.142135623730951
+Feromônio: 0.125
+Probabilidade: 0.006211180124223603
+Rotas disponíveis para Alvin: [Brasília, Goiânia]
+Simon está indo para a cidade Goiânia
+Iteração 4/5 para Simon
+Alvin irá para Brasília?
+Distância: 14.142135623730951
+Feromônio: 0.125
+Probabilidade: 0.0028328611898016994
+Simon está explorando as rotas da cidade Goiânia
+Alvin irá para Goiânia?
+Distância: 7.0710678118654755
+Feromônio: 1.375
+Probabilidade: 0.9971671388101983
+Rotas disponíveis para Simon: [São Paulo]
+Simon irá para São Paulo?
+Distância: 7.0710678118654755
+Feromônio: 0.625
+Probabilidade: 1.0
+Simon está indo para a cidade São Paulo
+Iteração 4/5 para Simon
+Simon está explorando as rotas da cidade São Paulo
+Rotas disponíveis para Simon: []
+Não há mais cidades para visitar.
+Alvin está indo para a cidade Goiânia
+Iteração 4/5 para Alvin
+Alvin está explorando as rotas da cidade Goiânia
+Rotas disponíveis para Alvin: [Brasília]
+Alvin irá para Brasília?
+Distância: 7.0710678118654755
+Feromônio: 1.375
+Probabilidade: 1.0
+Alvin está indo para a cidade Brasília
+Iteração 4/5 para Alvin
+Alvin está explorando as rotas da cidade Brasília
+Rotas disponíveis para Alvin: []
+Não há mais cidades para visitar.
+Iteração 4/5 para Theodore
+Theodore está explorando as rotas da cidade Goiânia
+Rotas disponíveis para Theodore: [Brasília]
+Theodore irá para Brasília?
+Distância: 7.0710678118654755
+Feromônio: 1.375
+Probabilidade: 1.0
+Theodore está indo para a cidade Brasília
+Mensagem recebida:
+O caminhão TruckAgent_Simon percorreu 14.142135623730951 km no total.
+Simon está esperando para atualizar (ou não) o feromônio.
+Simon está esperando para atualizar (ou não) o feromônio.
+Iteração 4/5 para Theodore
+Theodore está explorando as rotas da cidade Brasília
+Rotas disponíveis para Theodore: []
+Não há mais cidades para visitar.
+Alvin está esperando para atualizar (ou não) o feromônio.
+Mensagem recebida:
+O caminhão TruckAgent_Alvin percorreu 14.142135623730951 km no total.
+Theodore está esperando para atualizar (ou não) o feromônio.
+Mensagem recebida:
+O caminhão TruckAgent_Theodore percorreu 14.142135623730951 km no total.
+Todos os agentes completaram a rota.
+Melhor caminhão: TruckAgent_Simon
+Enviando comando para TruckAgent_Simon atualizar os feromônios.
+Enviando comando para TruckAgent_Alvin não fazer nada.
+Enviando comando para TruckAgent_Theodore não fazer nada.
+Alvin não precisa atualizar o feromônio. Mas está esperando os feromônios serem atualizados.
+Theodore não precisa atualizar o feromônio. Mas está esperando os feromônios serem atualizados.
+Simon está atualizando o feromônio.
+Simon atualizou o feromônio da rota Brasília -> Goiânia para 1.3125
+Simon atualizou o feromônio da rota Brasília -> São Paulo para 0.0625
+Simon atualizou o feromônio da rota Goiânia -> Brasília para 0.6875
+Simon atualizou o feromônio da rota Goiânia -> São Paulo para 1.3125
+Simon atualizou o feromônio da rota São Paulo -> Brasília para 0.0625
+Simon atualizou o feromônio da rota São Paulo -> Goiânia para 0.6875
+Simon está pronto para a próxima iteração.
+Iteração 5/5 para Simon
+Simon está explorando as rotas da cidade São Paulo
+Rotas disponíveis para Simon: [Brasília, Goiânia]
+Simon irá para Brasília?
+Distância: 14.142135623730951
+Feromônio: 0.0625
+Probabilidade: 0.0028328611898016994
+Simon irá para Goiânia?
+Distância: 7.0710678118654755
+Feromônio: 0.6875
+Probabilidade: 0.9971671388101983
+Simon está indo para a cidade Goiânia
+Iteração 5/5 para Simon
+Simon está explorando as rotas da cidade Goiânia
+Rotas disponíveis para Simon: [Brasília]
+Simon irá para Brasília?
+Distância: 7.0710678118654755
+Feromônio: 0.6875
+Probabilidade: 1.0
+Simon está indo para a cidade Brasília
+Iteração 5/5 para Simon
+Simon está explorando as rotas da cidade Brasília
+Rotas disponíveis para Simon: []
+Não há mais cidades para visitar.
+Simon está esperando para atualizar (ou não) o feromônio.
+Simon está esperando para atualizar (ou não) o feromônio.
+Theodore está pronto para a próxima iteração.
+Mensagem recebida:
+O caminhão TruckAgent_Simon percorreu 14.142135623730951 km no total.
+Iteração 5/5 para Theodore
+Alvin está pronto para a próxima iteração.
+Iteração 5/5 para Alvin
+Alvin está explorando as rotas da cidade Brasília
+Rotas disponíveis para Alvin: [Goiânia, São Paulo]
+Alvin irá para Goiânia?
+Distância: 7.0710678118654755
+Feromônio: 1.3125
+Probabilidade: 0.9985141158989599
+Alvin irá para São Paulo?
+Distância: 14.142135623730951
+Feromônio: 0.0625
+Probabilidade: 0.0014858841010401188
+Alvin está indo para a cidade Goiânia
+Iteração 5/5 para Alvin
+Alvin está explorando as rotas da cidade Goiânia
+Rotas disponíveis para Alvin: [São Paulo]
+Alvin irá para São Paulo?
+Distância: 7.0710678118654755
+Feromônio: 1.3125
+Probabilidade: 1.0
+Alvin está indo para a cidade São Paulo
+Iteração 5/5 para Alvin
+Alvin está explorando as rotas da cidade São Paulo
+Rotas disponíveis para Alvin: []
+Não há mais cidades para visitar.
+Theodore está explorando as rotas da cidade Brasília
+Rotas disponíveis para Theodore: [Goiânia, São Paulo]
+Theodore irá para Goiânia?
+Distância: 7.0710678118654755
+Feromônio: 1.3125
+Probabilidade: 0.9985141158989599
+Theodore irá para São Paulo?
+Distância: 14.142135623730951
+Feromônio: 0.0625
+Probabilidade: 0.0014858841010401188
+Alvin está esperando para atualizar (ou não) o feromônio.
+Mensagem recebida:
+O caminhão TruckAgent_Alvin percorreu 14.142135623730951 km no total.
+Theodore está indo para a cidade Goiânia
+Iteração 5/5 para Theodore
+Theodore está explorando as rotas da cidade Goiânia
+Rotas disponíveis para Theodore: [São Paulo]
+Theodore irá para São Paulo?
+Distância: 7.0710678118654755
+Feromônio: 1.3125
+Probabilidade: 1.0
+Theodore está indo para a cidade São Paulo
+Iteração 5/5 para Theodore
+Theodore está explorando as rotas da cidade São Paulo
+Rotas disponíveis para Theodore: []
+Não há mais cidades para visitar.
+Theodore está esperando para atualizar (ou não) o feromônio.
+Mensagem recebida:
+O caminhão TruckAgent_Theodore percorreu 14.142135623730951 km no total.
+Todos os agentes completaram a rota.
+Melhor caminhão: TruckAgent_Simon
+Enviando comando para TruckAgent_Simon atualizar os feromônios.
+Enviando comando para TruckAgent_Alvin não fazer nada.
+Simon está atualizando o feromônio.
+Enviando comando para TruckAgent_Theodore não fazer nada.
+Theodore não precisa atualizar o feromônio. Mas está esperando os feromônios serem atualizados.
+Simon atualizou o feromônio da rota Brasília -> Goiânia para 0.65625
+Simon atualizou o feromônio da rota Brasília -> São Paulo para 0.03125
+Simon atualizou o feromônio da rota Goiânia -> Brasília para 1.34375
+Simon atualizou o feromônio da rota Goiânia -> São Paulo para 0.65625
+Simon atualizou o feromônio da rota São Paulo -> Brasília para 0.03125
+Simon atualizou o feromônio da rota São Paulo -> Goiânia para 1.34375
+Alvin não precisa atualizar o feromônio. Mas está esperando os feromônios serem atualizados.
+Simon completou todas as iterações.
+Ciclos de execução finalizados.
+Theodore completou todas as iterações.
+Alvin completou todas as iterações.
+Agente Theodore finalizado.
+Agente Alvin finalizado.
+Agente MasterAgent finalizado.
+Agente Simon finalizado.

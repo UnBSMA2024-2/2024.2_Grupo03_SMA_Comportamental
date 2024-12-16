@@ -17,7 +17,6 @@ public class Position implements Serializable {
     @Serial
     private static final long serialVersionUID = -3614224928523365746L;
 
-    private Integer x;
-    private Integer y;
-
+    private Double x;
+    private Double y;
 }

@@ -5,10 +5,12 @@ AGENTS_LOG       = logs/agents.log
 SERVER_LOG       = logs/server.log
 AGENTS_PORT      = 1099
 SERVER_PORT      = 8080
+MOCK_RUNNER_CLASS = br.com.fga.mock.MockRunner 
 
 .PHONY:
 	clean
 	build-and-run
+	run-mocks
 
 build-up:
 	@echo "Gerando a build e executando o projeto"
@@ -54,3 +56,8 @@ build-up-win:
 build-win:
 	@echo "Gerando a build do projeto"
 	.\mvnw clean install
+
+run-mocks:
+	@echo "Executando os mocks..."
+	@java -cp agents/target/agents-1.0-SNAPSHOT.jar br.com.fga.mock.MockRunner
+	@echo "Mocks executados com sucesso!"

@@ -19,7 +19,8 @@ public abstract class Vehicle implements Serializable {
     private static final long serialVersionUID = 2031264515899704974L;
 
     private UUID id;
+    private String name;
     private Double speed;
     private String color;
-
+    private City currentCity;
 }
