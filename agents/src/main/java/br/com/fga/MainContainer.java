@@ -1,7 +1,9 @@
 package br.com.fga;
 
-import br.com.fga.agents.AntAgent;
+import br.com.fga.agents.TruckAgent;
 import br.com.fga.agents.HelloWorldAgent;
+import br.com.fga.models.Position;
+import br.com.fga.models.Truck;
 import br.com.fga.services.AgentService;
 import br.com.fga.services.impl.AgentServiceImpl;
 import br.com.fga.utils.ThreadUtils;
@@ -19,12 +21,14 @@ public class MainContainer {
 
         try {
             rma.start();
-
             helloWorldAgentController.start();
 
             for (int i = 0; i < 20; i++) {
                 AgentController antAgentController = agentService
-                        .createAgent("AntAgent" + i, AntAgent.class.getName(), new Object[] { 0, 0 });
+                        .createAgent("AntAgent" + i, TruckAgent.class.getName(), new Object[] {
+                            new Position(10, 10),
+                            new Truck(10.2, "red", 2),
+                        });
                 antAgentController.start();
 
                 ThreadUtils.sleep(5);

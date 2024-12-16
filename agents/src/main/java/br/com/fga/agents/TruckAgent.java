@@ -2,12 +2,12 @@ package br.com.fga.agents;
 
 import br.com.fga.exceptions.AgentArgsException;
 import br.com.fga.http.HttpClient;
-import br.com.fga.models.Ant;
+import br.com.fga.models.Position;
+import br.com.fga.models.Truck;
 import br.com.fga.services.AgentService;
 import br.com.fga.services.impl.AgentServiceImpl;
 import br.com.fga.utils.ThreadUtils;
 import jade.core.Agent;
-import jade.core.behaviours.Behaviour;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.OneShotBehaviour;
 import jade.domain.DFService;
@@ -16,17 +16,16 @@ import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.domain.FIPAException;
 
 import java.io.Serial;
-import java.net.ConnectException;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
-public class AntAgent extends Agent {
+public class TruckAgent extends Agent {
 
     @Serial
     private static final long serialVersionUID = -6504170837111912514L;
 
-    private Ant ant;
+    private Truck truck;
+    private Position position;
 
     private final AgentService agentService = AgentServiceImpl.getInstance();
 
@@ -38,10 +37,8 @@ public class AntAgent extends Agent {
             throw new AgentArgsException("Erro no número de parâmentros.");
         }
 
-        Integer positionX = (Integer) args[0];
-        Integer positionY = (Integer) args[1];
-
-        ant = new Ant(positionX, positionY);
+        position = (Position) args[0];
+        truck = (Truck) args[1];
 
         DFAgentDescription dfd = getDfAgentDescription();
 
@@ -77,7 +74,20 @@ public class AntAgent extends Agent {
         try {
             DFService.deregister(this);
 
-            // TODO: enviar via POST a lista de formigas atualizada
+            DFAgentDescription[] ants = agentService.search(this, "explore-map-service");
+
+            if (ants.length > 0) {
+                List<String> agentsName = Arrays.stream(ants)
+                        .map(it -> it.getName().getLocalName())
+                        .toList();
+
+                int responseCode = HttpClient.post("http://localhost:8080/ants/agents", agentsName);
+
+                if (responseCode != 200) {
+                    ThreadUtils.sleep(5);
+                    takeDown();
+                }
+            }
         } catch (FIPAException e) {
             throw new RuntimeException(e);
         }
@@ -97,7 +107,7 @@ public class AntAgent extends Agent {
                         .map(it -> it.getName().getLocalName())
                         .toList();
 
-                int responseCode = HttpClient.post("http://localhost:8080/ants", agentsName);
+                int responseCode = HttpClient.post("http://localhost:8080/ants/agents", agentsName);
 
                 if (responseCode != 200) {
                     ThreadUtils.sleep(5);
@@ -115,8 +125,8 @@ public class AntAgent extends Agent {
 
         @Override
         public void action() {
-            ant.setPositionX(ant.getPositionX() + 1);
-            ant.setPositionY(ant.getPositionY() + 1);
+            position.setX(position.getX() + 1);
+            position.setY(position.getY() + 1);
 
             System.out.println("Walking...");
         }

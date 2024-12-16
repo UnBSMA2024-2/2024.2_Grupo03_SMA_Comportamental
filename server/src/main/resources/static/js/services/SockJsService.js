@@ -16,7 +16,7 @@ class SockJsService {
 
         this._stompClient.onConnect = (frame) => {
             console.log('Connected: ' + frame);
-            this._stompClient.subscribe('/topic/ants/updates', (message) => {
+            this._stompClient.subscribe('/topic/ants/agents/alive', (message) => {
                 console.log(JSON.parse(message.body));
             });
         };

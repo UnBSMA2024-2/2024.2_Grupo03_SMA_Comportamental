@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4467710-b66a-4c7b-bf15-5ed7e72708ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/exceptions/AgentArgsException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/MainContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/MainContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/AntAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/AntAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/AntAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Ant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/AntController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/AntController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/static/js/services/SockJsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/static/js/services/SockJsService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

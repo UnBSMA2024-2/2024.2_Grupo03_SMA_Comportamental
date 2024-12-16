@@ -1,6 +1,5 @@
 package br.com.fga.controllers;
 
-import br.com.fga.models.Ant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -18,9 +17,9 @@ public class AntController {
     @Autowired
     private SimpMessagingTemplate simpMessagingTemplate;
 
-    @PostMapping
+    @PostMapping("/agents")
     public ResponseEntity<Void> notifyAntBirth(@RequestBody List<String> ants) {
-        simpMessagingTemplate.convertAndSend("/topic/ants/updates", ants);
+        simpMessagingTemplate.convertAndSend("/topic/ants/agents/alive", ants);
         System.out.println("recebi");
         return ResponseEntity.ok().build();
     }
