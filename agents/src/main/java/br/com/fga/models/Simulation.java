@@ -13,6 +13,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @EqualsAndHashCode
 public class Simulation implements Serializable {
+
     @Serial
     private static final long serialVersionUID = -6125833600009859542L;
 

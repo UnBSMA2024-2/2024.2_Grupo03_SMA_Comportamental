@@ -7,12 +7,26 @@ class SockJsService {
             brokerURL: 'ws://localhost:8080' + endpoint,
         });
 
-        this._stompClient.onConnect = (frame) => {
-            console.log('Connected: ' + frame);
-            this._stompClient.subscribe('/topic/updates', (message) => {
-                console.log(JSON.parse(message.body));
-            });
-        };
+        // this._stompClient.onConnect = (frame) => {
+        //     console.log('Connected: ' + frame);
+        //     this._stompClient.subscribe('/topic/updates', (message) => {
+        //         console.log(JSON.parse(message.body));
+        //     });
+        // };
+
+//        this._stompClient.onConnect = (frame) => {
+//            console.log('Connected: ' + frame);
+//            this._stompClient.subscribe('/topic/ants/agents/alive', (message) => {
+//                console.log(JSON.parse(message.body));
+//            });
+//        };
+
+        // this._stompClient.onConnect = (frame) => {
+        //     console.log('Connected: ' + frame);
+        //     this._stompClient.subscribe('/topic/simulation/update', (message) => {
+        //         console.log(JSON.parse(message.body));
+        //     });
+        // };
 
         this._stompClient.onWebSocketError = (error) => {
             console.error('Error with websocket', error);
@@ -31,6 +45,13 @@ class SockJsService {
     disconnect() {
         this._stompClient.deactivate();
         console.log("Disconnected");
+    }
+
+    subscribeTopic(topicName, clbk) {
+        this._stompClient.onConnect = (frame) => {
+            console.log('Connected: ' + frame);
+            this._stompClient.subscribe(topicName, clbk);
+        };
     }
 
     publishMessage(message) {

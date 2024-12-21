@@ -1,13 +1,16 @@
 package br.com.fga.http;
 
+import br.com.fga.models.Simulation;
 import br.com.fga.models.Truck;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
+import java.util.List;
 
 public class HttpClient {
 
@@ -36,7 +39,9 @@ public class HttpClient {
         }
     }
 
-    public static void post(String path, Object data) {
+    public static int post(String path, Object data) {
+        int responseCode = -1;
+
         try {
             URI uri = new URI(path);
             URL url = uri.toURL();
@@ -49,16 +54,45 @@ public class HttpClient {
                 os.write(input, 0, input.length);
             }
 
-            // Verificando a resposta
-            int responseCode = conn.getResponseCode();
-            System.out.println("Código de resposta: " + responseCode);
-
-            assert responseCode == 200;
+            responseCode = conn.getResponseCode();
 
             conn.disconnect();
+        } catch (ConnectException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Tentando novamente...");
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        return responseCode;
+    }
+
+    public static int postList(String path, List<Simulation> data) {
+        int responseCode = -1;
+
+        try {
+            URI uri = new URI(path);
+            URL url = uri.toURL();
+            HttpURLConnection conn = getHttpURLConnection(url, "POST");
+
+            String jsonInput = mapper.writeValueAsString(data);
+
+            try (OutputStream os = conn.getOutputStream()) {
+                byte[] input = jsonInput.getBytes("utf-8");
+                os.write(input, 0, input.length);
+            }
+
+            responseCode = conn.getResponseCode();
+
+            conn.disconnect();
+        } catch (ConnectException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Tentando novamente...");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return responseCode;
     }
 
     private static HttpURLConnection getHttpURLConnection(URL url, String method) throws IOException {
