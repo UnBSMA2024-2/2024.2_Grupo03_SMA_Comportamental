@@ -1,0 +1,255 @@
+{
+  "nodes": [
+    {
+      "node": "Milano",
+      "edges": [
+        {
+          "node": "Pavia",
+          "distance": 46
+        },
+        {
+          "node": "Varese",
+          "distance": 59
+        },
+        {
+          "node": "Lodi",
+          "distance": 41
+        },
+        {
+          "node": "Monza",
+          "distance": 18
+        },
+        {
+          "node": "Bergamo",
+          "distance": 51
+        },
+        {
+          "node": "Cremona",
+          "distance": 99
+        }
+      ]
+    },
+    {
+      "node": "Pavia",
+      "edges": [
+        {
+          "node": "Milano",
+          "distance": 46
+        },
+        {
+          "node": "Lodi",
+          "distance": 34
+        }
+      ]
+    },
+    {
+      "node": "Varese",
+      "edges": [
+        {
+          "node": "Como",
+          "distance": 28
+        },
+        {
+          "node": "Monza",
+          "distance": 74
+        },
+        {
+          "node": "Milano",
+          "distance": 59
+        }
+      ]
+    },
+    {
+      "node": "Como",
+      "edges": [
+        {
+          "node": "Verese",
+          "distance": 28
+        },
+        {
+          "node": "Sondrio",
+          "distance": 112
+        },
+        {
+          "node": "Lecco",
+          "distance": 31
+        },
+        {
+          "node": "Monza",
+          "distance": 41
+        }
+      ]
+    },
+    {
+      "node": "Cremona",
+      "edges": [
+        {
+          "node": "Lodi",
+          "distance": 49
+        },
+        {
+          "node": "Milano",
+          "distance": 99
+        },
+        {
+          "node": "Bergano",
+          "distance": 103
+        },
+        {
+          "node": "Brescia",
+          "distance": 56
+        },
+        {
+          "node": "Mantova",
+          "distance": 41
+        }
+      ]
+    },
+    {
+      "node": "Lecco",
+      "edges": [
+        {
+          "node": "Manza",
+          "distance": 41
+        },
+        {
+          "node": "Como",
+          "distance": 31
+        },
+        {
+          "node": "Sondrio",
+          "distance": 80
+        },
+        {
+          "node": "Bergano",
+          "distance": 41
+        }
+      ]
+    },
+    {
+      "node": "Lodi",
+      "edges": [
+        {
+          "node": "Pavia",
+          "distance": 34
+        },
+        {
+          "node": "Milano",
+          "distance": 41
+        },
+        {
+          "node": "Cremona",
+          "distance": 49
+        }
+      ]
+    },
+    {
+      "node": "Mantova",
+      "edges": [
+        {
+          "node": "Cremona",
+          "distance": 69
+        },
+        {
+          "node": "Brescia",
+          "distance": 95
+        }
+      ]
+    },
+    {
+      "node": "Monza",
+      "edges": [
+        {
+          "node": "Varese",
+          "distance": 74
+        },
+        {
+          "node": "Milano",
+          "distance": 18
+        },
+        {
+          "node": "Bergamo",
+          "distance": 40
+        },
+        {
+          "node": "Como",
+          "distance": 41
+        },{
+          "node": "Lecco",
+          "distance": 41
+        }
+      ]
+    },
+    {
+      "node": "Sondrio",
+      "edges": [
+        {
+          "node": "Como",
+          "distance": 112
+        },
+        {
+          "node": "Lecco",
+          "distance": 80
+        },
+        {
+          "node": "Bergamo",
+          "distance": 123
+        },
+        {
+          "node": "Brescia",
+          "distance": 139
+        }
+      ]
+    },
+    {
+      "node": "Bergamo",
+      "edges": [
+        {
+          "node": "Brescia",
+          "distance": 52
+        },
+        {
+          "node": "Sondrio",
+          "distance": 123
+        },
+        {
+          "node": "Lecco",
+          "distance": 41
+        },
+        {
+          "node": "Monza",
+          "distance": 40
+        },
+        {
+          "node": "Milano",
+          "distance": 51
+        },
+        {
+          "node": "Cremona",
+          "distance": 103
+        }
+      ]
+    },
+    {
+      "node": "Brescia",
+      "edges": [
+        {
+          "node": "Sondrio",
+          "distance": 139
+        },
+        {
+          "node": "Bergamo",
+          "distance": 52
+        },
+        {
+          "node": "Cremona",
+          "distance": 56
+        },
+        {
+          "node": "Mantova",
+          "distance": 95
+        }
+      ]
+    }
+  ]
+}
