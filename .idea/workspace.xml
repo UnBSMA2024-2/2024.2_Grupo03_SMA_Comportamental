@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4467710-b66a-4c7b-bf15-5ed7e72708ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/SimulationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/MainContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/MainContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/http/HttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/http/HttpClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/mock/SimulatorData.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/mock/SimulatorData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/mock/VehicleData.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/mock/VehicleData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Simulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Truck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/models/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/AntController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/VehicleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/static/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/resources/static/js/services/SockJsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/static/js/services/SockJsService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
