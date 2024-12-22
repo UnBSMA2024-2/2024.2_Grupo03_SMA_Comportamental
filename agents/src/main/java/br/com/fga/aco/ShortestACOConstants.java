@@ -1,13 +1,19 @@
+/*
+ * @autor MicheleZito
+ * @link https://github.com/MicheleZito
+ * @version 1.0
+ * @adaptation: @DouglasMonteles
+ * */
+
 package br.com.fga.aco;
 
-public abstract class ShortestACOConstants
-{	
+public abstract class ShortestACOConstants {
 	
 	public static final int MAX_ITERATIONS = 460;	
 	
 	public static final int MAX_TIME_TO_WAIT = 3000; 
 	
-	public static final int NUM_ANTS = 75;
+	public static final int NUM_ANTS = 1;
 
 	public static final int MIN_NUM_ROUTES = 3;	
 	
@@ -22,4 +28,5 @@ public abstract class ShortestACOConstants
 	public static final float THETA_MIN = 0.3F;		
 	
 	public static final float THETA_MAX = 70.0F;
+
 }
