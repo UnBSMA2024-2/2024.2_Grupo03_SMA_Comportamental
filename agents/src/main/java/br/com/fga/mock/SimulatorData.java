@@ -13,9 +13,9 @@ public class SimulatorData implements Serializable {
     private static final long serialVersionUID = 5437469129638472440L;
 
     private static final List<Simulation> SIMULATION_LIST = List.of(
-        new Simulation(new Position(0, 0), VehicleData.get(0)),
-        new Simulation(new Position(0, 0), VehicleData.get(1)),
-        new Simulation(new Position(0, 0), VehicleData.get(2))
+        new Simulation(new Position(0, 0), VehicleData.get(0))
+//        new Simulation(new Position(0, 0), VehicleData.get(1)),
+//        new Simulation(new Position(0, 0), VehicleData.get(2))
     );
 
     public static List<Simulation> getSimulationData() {

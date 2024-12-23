@@ -32,7 +32,7 @@ public class Path {
 			this.pathNodes.elementAt(i+1).updatePheromoneOnEdge(this.pathNodes.elementAt(i), pheromoneToApply);
 		}
 
-		System.out.println("Feromonio aplicado: " + this.pathNodes);
+		// System.out.println("Feromonio aplicado: " + this.pathNodes);
 		// TODO: Enviar feromonio atualizado para o frontend
 	}
 	

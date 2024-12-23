@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4467710-b66a-4c7b-bf15-5ed7e72708ea" name="Changes" comment="" />
+    <list default="true" id="b4467710-b66a-4c7b-bf15-5ed7e72708ea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/Path.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/mock/SimulatorData.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/mock/SimulatorData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/services/AgentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/services/AgentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/services/impl/AgentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/services/impl/AgentServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

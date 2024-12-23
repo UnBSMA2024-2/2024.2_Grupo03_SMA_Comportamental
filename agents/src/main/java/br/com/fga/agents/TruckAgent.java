@@ -20,8 +20,10 @@ import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.domain.FIPAException;
 import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
 import jade.lang.acl.UnreadableException;
 
+import java.io.IOException;
 import java.io.Serial;
 import java.util.Arrays;
 import java.util.List;
@@ -38,6 +40,8 @@ public class TruckAgent extends Agent {
     private Ant ant;
     private Graph graph;
 
+    int cont = 0;
+
     @Override
     protected void setup() {
         Object[] args = getArguments();
@@ -53,11 +57,7 @@ public class TruckAgent extends Agent {
 
         DFAgentDescription dfd = getDfAgentDescription();
 
-        try {
-            DFService.register(this, dfd);
-        } catch (FIPAException e) {
-            throw new RuntimeException(e);
-        }
+        agentService.register(this, dfd);
 
         addBehaviour(new NotifyBirthBehaviour());
         addBehaviour(new StartTripBehaviour());
@@ -82,21 +82,18 @@ public class TruckAgent extends Agent {
 
     @Override
     protected void takeDown() {
-        try {
-            DFService.deregister(this);
+        agentService.deregister(this);
 
-            DFAgentDescription[] ants = agentService.search(this, "explore-map-service");
+        DFAgentDescription[] ants = agentService.search(this, "explore-map-service");
 
-            if (ants.length > 0) {
-                List<String> agentsName = Arrays.stream(ants)
-                        .map(it -> it.getName().getLocalName())
-                        .toList();
+        if (ants.length > 0) {
+            List<String> agentsName = Arrays.stream(ants)
+                    .map(it -> it.getName().getLocalName())
+                    .toList();
 
-                HttpClient.post("http://localhost:8080/ants/agents", agentsName);
-            }
-        } catch (FIPAException e) {
-            throw new RuntimeException(e);
+            HttpClient.post("http://localhost:8080/ants/agents", agentsName);
         }
+
     }
 
     private class NotifyBirthBehaviour extends Behaviour {
@@ -110,7 +107,7 @@ public class TruckAgent extends Agent {
         public void action() {
             DFAgentDescription[] ants = agentService.search(getAgent(), "explore-map-service");
 
-            if (ants.length > 0) {
+            if (ants != null && ants.length > 0) {
                 List<String> agentsName = Arrays.stream(ants)
                         .map(it -> it.getName().getLocalName())
                         .toList();
@@ -135,7 +132,13 @@ public class TruckAgent extends Agent {
 
         @Override
         public void action() {
-            ACLMessage message = receive();
+            MessageTemplate messageTemplatePerformative = MessageTemplate.MatchPerformative(ACLMessage.REQUEST);
+            MessageTemplate messageTemplateSender = MessageTemplate.MatchSender(getAID("TruckManagerController"));
+
+            ACLMessage message = receive(MessageTemplate.and(
+                    messageTemplatePerformative,
+                    messageTemplateSender
+            ));
 
             if (message != null) {
                 try {
@@ -156,13 +159,19 @@ public class TruckAgent extends Agent {
                                 }
                                 case 3 -> {
                                     ant.applyPheromone();
+
+                                    ACLMessage okMessage = new ACLMessage(ACLMessage.CONFIRM);
+                                    okMessage.setContentObject("OK");
+                                    okMessage.addReceiver(getAID("TruckManagerController"));
+                                    send(okMessage);
+
                                     yield 4;
                                 }
                                 default -> step;
                             };
                         }
                     }
-                } catch (UnreadableException e) {
+                } catch (UnreadableException | IOException e) {
                     throw new RuntimeException(e);
                 }
             } else {

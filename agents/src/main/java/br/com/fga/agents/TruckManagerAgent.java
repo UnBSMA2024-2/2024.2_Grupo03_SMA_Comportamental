@@ -8,15 +8,14 @@ import br.com.fga.services.AgentService;
 import br.com.fga.services.impl.AgentServiceImpl;
 import jade.core.AID;
 import jade.core.Agent;
-import jade.core.behaviours.Behaviour;
-import jade.core.behaviours.OneShotBehaviour;
-import jade.core.behaviours.SequentialBehaviour;
-import jade.core.behaviours.TickerBehaviour;
+import jade.core.behaviours.*;
 import jade.domain.DFService;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.domain.FIPAException;
 import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
+import jade.lang.acl.UnreadableException;
 import jade.wrapper.AgentController;
 import jade.wrapper.StaleProxyException;
 
@@ -60,11 +59,11 @@ public class TruckManagerAgent extends Agent {
         public void action() {
             SimulatorData.getSimulationData().forEach(simulation -> {
                 AgentController truckAgentController = agentService
-                        .createAgent("TruckAgent" + simulation.getVehicle().getId(), TruckAgent.class.getName(), new Object[] {
-                            simulation.getPosition(),
-                            simulation.getVehicle(),
-                            new Ant(aco),
-                            graph,
+                        .createAgent("TruckAgent" + simulation.getVehicle().getId(), TruckAgent.class.getName(), new Object[]{
+                                simulation.getPosition(),
+                                simulation.getVehicle(),
+                                new Ant(aco),
+                                graph,
                         });
 
                 try {
@@ -83,7 +82,11 @@ public class TruckManagerAgent extends Agent {
 
         private int interactions = 0;
 
-        private DFAgentDescription[] result = null;
+        /*
+         * Controla o número de vezes que o nó inicial é enviado, evitando que um novo nó
+         * seja enviado antes de receber a confirmação do envio anterior.
+         * */
+        private boolean isWaitingForAnswer = false;
 
         private final long startTime;
 
@@ -95,23 +98,46 @@ public class TruckManagerAgent extends Agent {
         public void action() {
             // Inicia a exploração das formigas
             try {
-                result = agentService.search(getAgent(), "explore-map-service");
+                if (!isWaitingForAnswer) {
+                    DFAgentDescription[] result = agentService.search(getAgent(), "explore-map-service");
 
-                if (result.length > 0) {
-                    // TODO: tratar caso do agente Truck recusar a requisição
-                    AID serviceProvider = result[0].getName();
-                    ACLMessage startTripMessage = new ACLMessage(ACLMessage.REQUEST);
+                    if (result.length > 0) {
+                        // TODO: tratar caso do agente Truck recusar a requisição
+                        AID serviceProvider = result[0].getName();
+                        ACLMessage startTripMessage = new ACLMessage(ACLMessage.REQUEST);
 
-                    startTripMessage.addReceiver(serviceProvider);
-                    startTripMessage.setContentObject(graph.getStart());
+                        startTripMessage.addReceiver(serviceProvider);
+                        startTripMessage.setContentObject(graph.getStart());
 
-                    send(startTripMessage);
-                } else {
-                    System.out.println("Nenhum agente encontrado, mas não fique triste, nem tudo são flores.");
+                        send(startTripMessage);
+                        isWaitingForAnswer = true;
+                    } else {
+                        System.out.println("Nenhum agente encontrado, mas não fique triste, nem tudo são flores.");
+                    }
                 }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+
+            MessageTemplate messageTemplate = MessageTemplate.MatchPerformative(ACLMessage.CONFIRM);
+            ACLMessage message = receive(messageTemplate);
+
+            if (message == null) {
+                block();
+            } else {
+                String content = null;
+                try {
+                    content = (String) message.getContentObject();
+
+                    if (content.equals("OK")) {
+                        interactions++;
+                        isWaitingForAnswer = false;
+                    }
+                } catch (UnreadableException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
         }
 
         @Override
@@ -128,15 +154,15 @@ public class TruckManagerAgent extends Agent {
                     }
 
                     System.out.println("\n\n" + "Total Distance: " + aco.getBestPath().getTotaLength());
-                    return true;
                 } else {
                     System.out.println("\n\n" + "No path found. Maybe The node is not connected");
-                    return true;
                 }
+
+                return true;
             }
 
+
             graph.updateEdges();
-            interactions++;
 
             return false;
         }
