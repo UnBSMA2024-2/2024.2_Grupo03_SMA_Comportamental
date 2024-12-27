@@ -7,6 +7,7 @@
 
 package br.com.fga.aco;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import java.io.Serial;
@@ -18,12 +19,18 @@ public class Adjacency implements Serializable {
 	@Serial
 	private static final long serialVersionUID = -3808629388189781695L;
 
+	@JsonIgnore
 	private GraphNode node;
+
+	private String name;
 	private int distance;
     private float pheromone;
+
+	public Adjacency() {}
 	
 	public Adjacency(GraphNode gr, int dist) {
 		this.node = gr;
+		this.name = gr.getName();
 		this.distance = dist;
 		this.setPheromone(ShortestACOConstants.THETA0);
 	}

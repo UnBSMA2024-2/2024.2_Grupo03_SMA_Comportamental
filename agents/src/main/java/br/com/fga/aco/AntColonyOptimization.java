@@ -7,8 +7,8 @@ public class AntColonyOptimization {
         grp.buildGraph();
         // grp.printGraph();
         
-        grp.setStart("Como");
-        grp.setEnd("Milano");
+        grp.defineStart("Como");
+        grp.defineEnd("Milano");
         
         ShortestACO aco = new ShortestACO(grp);
         aco.start();

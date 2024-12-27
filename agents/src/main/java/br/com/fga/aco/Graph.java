@@ -10,6 +10,8 @@ package br.com.fga.aco;
 import br.com.fga.aco.dto.GraphDTO;
 import br.com.fga.aco.dto.NodeAdjacentDTO;
 import br.com.fga.aco.dto.NodeDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
@@ -41,8 +43,7 @@ public class Graph {
 			t.updateAdjacentEdges();
 	}
 
-
-    public void setStart(String name) {
+    public void defineStart(String name) {
         boolean cond = FALSE;
 
         for(GraphNode t : this.nodes) {
@@ -59,8 +60,7 @@ public class Graph {
         }
 	}
 
-	
-	public void setEnd(String name) {
+	public void defineEnd(String name) {
         boolean  cond = FALSE;
 
         for (GraphNode t : this.nodes) {

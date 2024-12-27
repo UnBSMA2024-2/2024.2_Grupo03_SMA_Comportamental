@@ -14,7 +14,7 @@ const simulationScreen = new SimulationScreen(mainContent);
 // End global services
 
 // Topics to subscribe to
-sockJsService.subscribeTopic('/topic/simulation/update', (message) => {
+sockJsService.subscribeTopic('/topic/graph/updates', (message) => {
   const simulationBody = JSON.parse(message.body);
   simulationScreen.renderScreen(simulationBody);
 

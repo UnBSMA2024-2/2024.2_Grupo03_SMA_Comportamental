@@ -37,8 +37,8 @@ public class TruckManagerAgent extends Agent {
     protected void setup() {
         graph.buildGraph();
 
-        graph.setStart("Como");
-        graph.setEnd("Milano");
+        graph.defineStart("Como");
+        graph.defineEnd("Milano");
 
         aco = new ShortestACO(graph);
 
@@ -47,7 +47,7 @@ public class TruckManagerAgent extends Agent {
         acoSequentialBehavior.addSubBehaviour(new ACOBehaviour());
 
         addBehaviour(acoSequentialBehavior);
-        addBehaviour(new UpdateSimulationDataBehaviour(this, PeriodBehaviour.ONE_SECOND.value()));
+        addBehaviour(new SendGraphDataBehaviour());
     }
 
     private class TruckBirthBehaviour extends OneShotBehaviour {
@@ -168,18 +168,25 @@ public class TruckManagerAgent extends Agent {
         }
     }
 
-    private static class UpdateSimulationDataBehaviour extends TickerBehaviour {
+    private class SendGraphDataBehaviour extends Behaviour {
 
         @Serial
         private static final long serialVersionUID = 5598642300837181790L;
 
-        public UpdateSimulationDataBehaviour(Agent a, long period) {
-            super(a, period);
+        private int status = -1;
+
+        @Override
+        public void action() {
+            status = HttpClient.post("http://localhost:8080/graph/update", graph);
+
+            if (status != 200) {
+                block(PeriodBehaviour.ONE_SECOND.value());
+            }
         }
 
         @Override
-        protected void onTick() {
-            HttpClient.post("http://localhost:8080/simulation/update", SimulatorData.getSimulationData());
+        public boolean done() {
+            return status == 200;
         }
     }
 

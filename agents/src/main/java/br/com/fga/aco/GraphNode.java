@@ -7,7 +7,11 @@
 
 package br.com.fga.aco;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -15,23 +19,25 @@ import java.util.Objects;
 import java.util.Vector;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class GraphNode implements Serializable {
 
 	@Serial
 	private static final long serialVersionUID = 2048869609071513923L;
 
-	private final String name;
-	private final Vector<Adjacency> adjs;
+	private String name;
+	private Vector<Adjacency> adjs;
 
 	public GraphNode(String name) {
 		this.name = name;
 		this.adjs = new Vector<>();
 	}
-	
+
 	public void addAdjacent(Adjacency adj) {
 		this.adjs.add(adj);
 	}
-	
+
 	public Vector<Adjacency> getAdjacents() {
 		return this.adjs;
 	}
@@ -45,8 +51,7 @@ public class GraphNode implements Serializable {
 
 		return -1;
 	}
-	
-	
+
 	public void updatePheromoneOnEdge(GraphNode node, float pheromone) {
 		for (Adjacency t : this.adjs) {
 			if (t.getNode().equals(node)) {
@@ -55,8 +60,7 @@ public class GraphNode implements Serializable {
 			}
 		}
 	}
-	
-	
+
 	public void updateAdjacentEdges() {
 		for (Adjacency x : adjs) {
 			x.evaporate();
