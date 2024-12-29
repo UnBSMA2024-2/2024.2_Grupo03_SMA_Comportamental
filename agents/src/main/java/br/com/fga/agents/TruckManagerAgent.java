@@ -4,15 +4,15 @@ import br.com.fga.aco.*;
 import br.com.fga.exceptions.AgentException;
 import br.com.fga.http.HttpClient;
 import br.com.fga.mock.SimulatorData;
+import br.com.fga.observables.Observer;
 import br.com.fga.services.AgentService;
 import br.com.fga.services.impl.AgentServiceImpl;
 import jade.core.AID;
 import jade.core.Agent;
-import jade.core.behaviours.*;
-import jade.domain.DFService;
+import jade.core.behaviours.Behaviour;
+import jade.core.behaviours.OneShotBehaviour;
+import jade.core.behaviours.SequentialBehaviour;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
-import jade.domain.FIPAAgentManagement.ServiceDescription;
-import jade.domain.FIPAException;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 import jade.lang.acl.UnreadableException;
@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.io.Serial;
 import java.util.Vector;
 
-public class TruckManagerAgent extends Agent {
+public class TruckManagerAgent extends Agent implements Observer {
 
     @Serial
     private static final long serialVersionUID = 7792591193470292413L;
@@ -48,6 +48,8 @@ public class TruckManagerAgent extends Agent {
 
         addBehaviour(acoSequentialBehavior);
         addBehaviour(new SendGraphDataBehaviour());
+
+        graph.addObserver(this);
     }
 
     private class TruckBirthBehaviour extends OneShotBehaviour {
@@ -161,7 +163,6 @@ public class TruckManagerAgent extends Agent {
                 return true;
             }
 
-
             graph.updateEdges();
 
             return false;
@@ -190,4 +191,12 @@ public class TruckManagerAgent extends Agent {
         }
     }
 
+    @Override
+    public void update() {
+//        int status;
+//
+//        do {
+//            status = HttpClient.post("http://localhost:8080/graph/update", graph);
+//        } while (status != 200);
+    }
 }

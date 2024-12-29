@@ -10,22 +10,28 @@ package br.com.fga.aco;
 import br.com.fga.aco.dto.GraphDTO;
 import br.com.fga.aco.dto.NodeAdjacentDTO;
 import br.com.fga.aco.dto.NodeDTO;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import br.com.fga.observables.Subject;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Vector;
 
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 import static java.lang.System.exit;
 
+@EqualsAndHashCode(callSuper = false)
 @Data
-public class Graph {
+public class Graph extends Subject implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = -3011226785646130427L;
 
     private final Vector<GraphNode> nodes;
 
@@ -41,6 +47,7 @@ public class Graph {
 	public void updateEdges() {
 		for (GraphNode t : nodes)
 			t.updateAdjacentEdges();
+        notifyAllObservers();
 	}
 
     public void defineStart(String name) {

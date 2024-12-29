@@ -7,11 +7,17 @@
 
 package br.com.fga.aco;
 
+import br.com.fga.http.HttpClient;
 import lombok.Getter;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Vector;
 
-public class ShortestACO {
+public class ShortestACO implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 3207734240578444959L;
+
     private final Graph graph;
     private final Vector<Ant> ants;
 
@@ -88,5 +94,7 @@ public class ShortestACO {
                 this.bestPathLen = newPath.getTotaLength();
             }
         }
+        System.out.println(newPath);
+        HttpClient.post("http://localhost:8080/graph/updateNodes", newPath);
     }
 }

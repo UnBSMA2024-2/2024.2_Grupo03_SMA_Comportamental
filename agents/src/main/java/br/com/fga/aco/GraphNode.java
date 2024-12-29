@@ -7,10 +7,8 @@
 
 package br.com.fga.aco;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.io.Serial;
@@ -42,7 +40,7 @@ public class GraphNode implements Serializable {
 		return this.adjs;
 	}
 
-	public int getDistanceFromNode(GraphNode node) {
+	public int calcDistanceFromNode(GraphNode node) {
 		for (Adjacency t : this.adjs) {
 			if (t.getNode().equals(node)) {
 				return t.getLength();

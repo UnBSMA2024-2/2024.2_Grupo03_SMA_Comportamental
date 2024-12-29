@@ -10,12 +10,18 @@ package br.com.fga.aco;
 import lombok.Data;
 import lombok.Getter;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Vector;
 
+@Getter
 @Data
-public class Path {
-	@Getter
-    private int totaLength;
+public class Path implements Serializable {
+	@Serial
+	private static final long serialVersionUID = 7685950879179662495L;
+
+	private int totaLength;
+
 	private final Vector<GraphNode> pathNodes;
 	
 	
@@ -34,6 +40,7 @@ public class Path {
 
 		// System.out.println("Feromonio aplicado: " + this.pathNodes);
 		// TODO: Enviar feromonio atualizado para o frontend
+		// HttpClient.post("http://localhost:8080/graph/updateNodes", pathNodes);
 	}
 	
 	public void add(GraphNode node) {
@@ -43,7 +50,7 @@ public class Path {
 
     public void calculateTotaLength() {
 		for (int i = 0; i < this.pathNodes.size() -1; i++) {
-			this.setTotaLength(this.getTotaLength() + this.pathNodes.elementAt(i).getDistanceFromNode(this.pathNodes.elementAt(i+1)));
+			this.setTotaLength(this.getTotaLength() + this.pathNodes.elementAt(i).calcDistanceFromNode(this.pathNodes.elementAt(i+1)));
 		}
 	}
 
