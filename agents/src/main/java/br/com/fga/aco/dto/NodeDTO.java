@@ -15,6 +15,9 @@ public class NodeDTO {
     @JsonProperty("node")
     private String node;
 
+    @JsonProperty("position")
+    private PositionDTO position;
+
     @JsonProperty("edges")
     private Vector<NodeAdjacentDTO> edges = new Vector<>();
 

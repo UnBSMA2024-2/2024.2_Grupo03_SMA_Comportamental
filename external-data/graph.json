@@ -2,6 +2,10 @@
   "nodes": [
     {
       "node": "Milano",
+      "position": {
+        "x": 10,
+        "y": 20
+      },
       "edges": [
         {
           "node": "Pavia",
@@ -31,6 +35,10 @@
     },
     {
       "node": "Pavia",
+      "position": {
+        "x": 10,
+        "y": 20
+      },
       "edges": [
         {
           "node": "Milano",
@@ -44,6 +52,10 @@
     },
     {
       "node": "Varese",
+      "position": {
+        "x": 10,
+        "y": 20
+      },
       "edges": [
         {
           "node": "Como",
@@ -61,6 +73,10 @@
     },
     {
       "node": "Como",
+      "position": {
+        "x": 10,
+        "y": 20
+      },
       "edges": [
         {
           "node": "Verese",
@@ -82,6 +98,10 @@
     },
     {
       "node": "Cremona",
+      "position": {
+        "x": 10,
+        "y": 20
+      },
       "edges": [
         {
           "node": "Lodi",
@@ -107,6 +127,10 @@
     },
     {
       "node": "Lecco",
+      "position": {
+        "x": 10,
+        "y": 20
+      },
       "edges": [
         {
           "node": "Manza",
@@ -128,6 +152,10 @@
     },
     {
       "node": "Lodi",
+      "position": {
+        "x": 10,
+        "y": 20
+      },
       "edges": [
         {
           "node": "Pavia",
@@ -145,6 +173,10 @@
     },
     {
       "node": "Mantova",
+      "position": {
+        "x": 10,
+        "y": 20
+      },
       "edges": [
         {
           "node": "Cremona",
@@ -158,6 +190,10 @@
     },
     {
       "node": "Monza",
+      "position": {
+        "x": 10,
+        "y": 20
+      },
       "edges": [
         {
           "node": "Varese",
@@ -182,6 +218,10 @@
     },
     {
       "node": "Sondrio",
+      "position": {
+        "x": 10,
+        "y": 20
+      },
       "edges": [
         {
           "node": "Como",
@@ -203,6 +243,10 @@
     },
     {
       "node": "Bergamo",
+      "position": {
+        "x": 10,
+        "y": 20
+      },
       "edges": [
         {
           "node": "Brescia",
@@ -232,6 +276,10 @@
     },
     {
       "node": "Brescia",
+      "position": {
+        "x": 10,
+        "y": 20
+      },
       "edges": [
         {
           "node": "Sondrio",
