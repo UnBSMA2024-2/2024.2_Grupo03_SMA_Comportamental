@@ -38,7 +38,7 @@ public class Path implements Serializable {
 			this.pathNodes.elementAt(i+1).updatePheromoneOnEdge(this.pathNodes.elementAt(i), pheromoneToApply);
 		}
 
-		// System.out.println("Feromonio aplicado: " + this.pathNodes);
+		// System.out.println(pathNodes.stream().map(it -> it.getAdjacents().stream().map(it2 -> it2.getPheromone()).toList()).toList());
 		// TODO: Enviar feromonio atualizado para o frontend
 		// HttpClient.post("http://localhost:8080/graph/updateNodes", pathNodes);
 	}

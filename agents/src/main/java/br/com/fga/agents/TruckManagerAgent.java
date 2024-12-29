@@ -38,7 +38,7 @@ public class TruckManagerAgent extends Agent implements Observer {
         graph.buildGraph();
 
         graph.defineStart("Como");
-        graph.defineEnd("Milano");
+        graph.defineEnd("Pavia");
 
         aco = new ShortestACO(graph);
 

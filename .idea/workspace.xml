@@ -7,13 +7,9 @@
     <list default="true" id="b4467710-b66a-4c7b-bf15-5ed7e72708ea" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/AntColonyOptimization.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/AntColonyOptimization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/GraphNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/GraphNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/Path.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/ShortestACO.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/ShortestACO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/observables/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/observables/Subject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/static/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +105,7 @@
       <recent name="org.fga.tcc.services" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AntColonyOptimization">
+  <component name="RunManager" selected="Application.MainContainer">
     <configuration name="AntColonyOptimization" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.fga.aco.AntColonyOptimization" />
       <module name="agents" />
@@ -183,9 +179,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AntColonyOptimization" />
         <item itemvalue="Application.MainContainer" />
         <item itemvalue="Application.DemoApplication" />
+        <item itemvalue="Application.AntColonyOptimization" />
         <item itemvalue="Application.HttpClient" />
         <item itemvalue="Makefile Target.run" />
       </list>

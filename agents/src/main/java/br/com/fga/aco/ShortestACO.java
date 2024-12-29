@@ -94,7 +94,7 @@ public class ShortestACO implements Serializable {
                 this.bestPathLen = newPath.getTotaLength();
             }
         }
-        System.out.println(newPath);
+        // System.out.println(newPath.getNodes().stream().map(it -> it.getName()).toList());
         HttpClient.post("http://localhost:8080/graph/updateNodes", newPath);
     }
 }
