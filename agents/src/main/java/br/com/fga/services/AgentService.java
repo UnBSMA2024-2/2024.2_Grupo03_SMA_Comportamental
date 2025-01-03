@@ -12,4 +12,8 @@ public interface AgentService {
 
     DFAgentDescription[] search(Agent agent, String serviceType);
 
+    void register(Agent agent, DFAgentDescription dfd);
+
+    void deregister(Agent agent);
+
 }

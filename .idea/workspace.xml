@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4467710-b66a-4c7b-bf15-5ed7e72708ea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/static/graph.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/static/js/libs/cytoscape-euler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/static/planar-chain.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/AntController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/VehicleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/VehicleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/static/js/services/SockJsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/static/js/services/SockJsService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/Ant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/Path.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/ShortestACO.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/ShortestACO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/external-data/graph.json" beforeDir="false" afterPath="$PROJECT_DIR$/external-data/graph.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/GraphController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/GraphController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,67 +46,84 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.DemoApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DeputeServiceImpl.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DeputesCsvToEntityImpl.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DeputyServiceImpl.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FetchCsv.executor&quot;: &quot;Run&quot;,
-    &quot;Application.FetchJson.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GenerateTxtModel.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HttpClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ImdbReviewClassificationRNN.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.MainContainer.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PrepareWordVector.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TestNews.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TrainNews.executor&quot;: &quot;Run&quot;,
-    &quot;Application.VoteServiceImpl.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DemoApplicationTests (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DemoApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Makefile Target.build-and-run.executor&quot;: &quot;Run&quot;,
-    &quot;Makefile Target.run.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.agents [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.politics-agents [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.server [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.truck-simulator [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ant-agents&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/douglas/Documentos/www/sistemas-multiagentes/truck-simulator/agents/src/main/java/br/com/fga&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AntColonyOptimization.executor": "Run",
+    "Application.DemoApplication.executor": "Run",
+    "Application.DeputeServiceImpl.executor": "Run",
+    "Application.DeputesCsvToEntityImpl.executor": "Run",
+    "Application.DeputyServiceImpl.executor": "Run",
+    "Application.FetchCsv.executor": "Run",
+    "Application.FetchJson.executor": "Run",
+    "Application.GenerateTxtModel.executor": "Run",
+    "Application.HttpClient.executor": "Run",
+    "Application.ImdbReviewClassificationRNN.executor": "Debug",
+    "Application.MainContainer.executor": "Run",
+    "Application.PrepareWordVector.executor": "Run",
+    "Application.TestNews.executor": "Run",
+    "Application.TrainNews.executor": "Run",
+    "Application.VoteServiceImpl.executor": "Run",
+    "JUnit.DemoApplicationTests (1).executor": "Run",
+    "JUnit.DemoApplicationTests.executor": "Run",
+    "Makefile Target.build-and-run.executor": "Run",
+    "Makefile Target.run.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.agents [clean,install].executor": "Run",
+    "Maven.politics-agents [clean,install].executor": "Run",
+    "Maven.server [clean,install].executor": "Run",
+    "Maven.truck-simulator [clean,install].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "adaptacao-algoritmo-aco",
+    "jdk.selected.JAVA_MODULE": "21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/douglas/Documentos/www/2024.2_Grupo03_SMA_Comportamental/server/src/main/resources/static",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "advanced.settings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="br.com.fga.agents" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/src/main/resources/static" />
+      <recent name="$PROJECT_DIR$/server/src/main/resources/static/js/libs" />
       <recent name="$PROJECT_DIR$/agents/src/main/java/br/com/fga" />
       <recent name="$PROJECT_DIR$/server/src/main/resources" />
       <recent name="$PROJECT_DIR$/server/src/test/java/br/com/fga" />
-      <recent name="$PROJECT_DIR$/server/src/main/resources/static" />
-      <recent name="$PROJECT_DIR$/server/src/main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/external-data" />
       <recent name="$PROJECT_DIR$/server/src/main/resources/static/js/services" />
       <recent name="$PROJECT_DIR$/server/src/main/resources/static" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.fga.dtos" />
       <recent name="br.com.fga.controllers" />
       <recent name="br.com.fga.agents" />
       <recent name="org.fga.tcc.services.impl" />
       <recent name="org.fga.tcc.services" />
-      <recent name="org.fga.tcc.word2vec" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DemoApplication">
+  <component name="RunManager" selected="Application.AntColonyOptimization">
+    <configuration name="AntColonyOptimization" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.fga.aco.AntColonyOptimization" />
+      <module name="agents" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.fga.aco.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.fga.DemoApplication" />
       <module name="server" />
@@ -156,12 +176,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="build-and-run" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
-      <makefile filename="$PROJECT_DIR$/Makefile" target="build-and-run" workingDirectory="" arguments="">
-        <envs />
-      </makefile>
-      <method v="2" />
-    </configuration>
     <configuration name="run" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
       <makefile filename="$PROJECT_DIR$/Makefile" target="run" workingDirectory="" arguments="">
         <envs />
@@ -170,20 +184,13 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AntColonyOptimization" />
         <item itemvalue="Application.DemoApplication" />
         <item itemvalue="Application.MainContainer" />
         <item itemvalue="Application.HttpClient" />
         <item itemvalue="Makefile Target.run" />
-        <item itemvalue="Makefile Target.build-and-run" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-78a6f59c" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -195,5 +202,8 @@
       <updated>1723319350746</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>

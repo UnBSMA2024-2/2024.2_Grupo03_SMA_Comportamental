@@ -58,6 +58,24 @@ public class AgentServiceImpl implements AgentService {
         return result;
     }
 
+    @Override
+    public void register(Agent agent, DFAgentDescription dfd) {
+        try {
+            DFService.register(agent, dfd);
+        } catch (FIPAException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void deregister(Agent agent) {
+        try {
+            DFService.deregister(agent);
+        } catch (FIPAException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static AgentService getInstance() {
         return INSTANCE;
     }
