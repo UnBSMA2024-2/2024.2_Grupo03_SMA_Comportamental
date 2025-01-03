@@ -7,6 +7,8 @@
 
 package br.com.fga.aco;
 
+import br.com.fga.http.HttpClient;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.Getter;
 
@@ -14,8 +16,6 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.Vector;
 
-@Getter
-@Data
 public class Path implements Serializable {
 	@Serial
 	private static final long serialVersionUID = 7685950879179662495L;
@@ -23,13 +23,12 @@ public class Path implements Serializable {
 	private int totaLength;
 
 	private final Vector<GraphNode> pathNodes;
-	
-	
+
 	public Path() {
 		this.pathNodes = new Vector<>();
 		this.totaLength = 0;
 	}
-	
+
 	public void releasePheromone(float bestLength) {
 		float pheromoneToApply = (bestLength / this.totaLength);
 
@@ -38,27 +37,31 @@ public class Path implements Serializable {
 			this.pathNodes.elementAt(i+1).updatePheromoneOnEdge(this.pathNodes.elementAt(i), pheromoneToApply);
 		}
 
-		// System.out.println(pathNodes.stream().map(it -> it.getAdjacents().stream().map(it2 -> it2.getPheromone()).toList()).toList());
+//		System.out.println(pathNodes.stream().map(it -> it.getName() + "->" + it.getAdjs().stream().map(it4 -> it4.getName()).toList()).toList());
+//		System.out.println(pathNodes.stream().map(it -> it.getAdjacents().stream().map(it2 -> it2.getPheromone()).toList()).toList());
 		// TODO: Enviar feromonio atualizado para o frontend
-		// HttpClient.post("http://localhost:8080/graph/updateNodes", pathNodes);
+		HttpClient.post("http://localhost:8080/graph/updateNodes", pathNodes);
 	}
-	
-	public void add(GraphNode node) {
+
+	public void addGraphNode(GraphNode node) {
 		this.pathNodes.add(node);
 	}
 
-
     public void calculateTotaLength() {
 		for (int i = 0; i < this.pathNodes.size() -1; i++) {
-			this.setTotaLength(this.getTotaLength() + this.pathNodes.elementAt(i).calcDistanceFromNode(this.pathNodes.elementAt(i+1)));
+			this.defineTotaLength(this.getTotaLength() + this.pathNodes.elementAt(i).calcDistanceFromNode(this.pathNodes.elementAt(i+1)));
 		}
 	}
 
-	private void setTotaLength(int newLength) {
+	public int getTotaLength() {
+		return totaLength;
+	}
+
+	private void defineTotaLength(int newLength) {
 		this.totaLength = newLength;
 	}
-	
-	public Vector<GraphNode> getNodes() {
+
+	public Vector<GraphNode> getPathNodes() {
 		return this.pathNodes;
 	}
 

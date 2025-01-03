@@ -79,7 +79,7 @@
       },
       "edges": [
         {
-          "node": "Verese",
+          "node": "Varese",
           "distance": 28
         },
         {
@@ -112,7 +112,7 @@
           "distance": 99
         },
         {
-          "node": "Bergano",
+          "node": "Bergamo",
           "distance": 103
         },
         {
@@ -133,7 +133,7 @@
       },
       "edges": [
         {
-          "node": "Manza",
+          "node": "Monza",
           "distance": 41
         },
         {
@@ -145,7 +145,7 @@
           "distance": 80
         },
         {
-          "node": "Bergano",
+          "node": "Bergamo",
           "distance": 41
         }
       ]

@@ -1,6 +1,7 @@
 package br.com.fga.controllers;
 
 import br.com.fga.aco.Graph;
+import br.com.fga.aco.GraphNode;
 import br.com.fga.aco.Path;
 import br.com.fga.aco.dto.GraphDTO;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Vector;
 
 @RestController
 @RequestMapping("/graph")
@@ -38,7 +40,7 @@ public class GraphController {
     }
 
     @PostMapping("/updateNodes")
-    public ResponseEntity<Void> update(@RequestBody Path graphNodes) {
+    public ResponseEntity<Void> update(@RequestBody Vector<GraphNode> graphNodes) {
         simpMessagingTemplate.convertAndSend("/topic/graph/updateNodes", graphNodes);
         return ResponseEntity.ok().build();
     }

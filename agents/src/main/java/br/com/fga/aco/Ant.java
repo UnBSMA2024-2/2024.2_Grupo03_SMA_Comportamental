@@ -40,7 +40,7 @@ public class Ant {
 		this.alreadyVisited.clear();
 		this.arcsVisited.clear();
 
-		this.currentFoundPath.add(this.currentNode);
+		this.currentFoundPath.addGraphNode(this.currentNode);
 		this.alreadyVisited.add(currentNode);
 	}
 		
@@ -108,7 +108,7 @@ public class Ant {
 		if (!this.alreadyVisited.contains(currentNode))
 			this.alreadyVisited.add(currentNode);
 
-		this.currentFoundPath.add(this.currentNode);
+		this.currentFoundPath.addGraphNode(this.currentNode);
 	}
 	
 	private double computeCoefficient(Adjacency info) {

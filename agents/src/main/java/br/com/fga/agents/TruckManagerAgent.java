@@ -149,7 +149,7 @@ public class TruckManagerAgent extends Agent implements Observer {
             if (isDone) {
                 if (aco.getBestPathLength() != 0) {
                     System.out.println("\n" + "Shortest Path: ");
-                    Vector<GraphNode> nodesOnPath = aco.getBestPath().getNodes();
+                    Vector<GraphNode> nodesOnPath = aco.getBestPath().getPathNodes();
 
                     for (GraphNode t : nodesOnPath) {
                         System.out.print(" -> " + t.getName());

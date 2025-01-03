@@ -63,7 +63,7 @@ public class ShortestACO implements Serializable {
 
         if (this.bestPathLen != 0) {
             System.out.println("\n" + "Shortest Path: ");
-            Vector<GraphNode> nodesOnPath = this.bestPath.getNodes();
+            Vector<GraphNode> nodesOnPath = this.bestPath.getPathNodes();
 
             for (GraphNode t : nodesOnPath) {
                 System.out.print(" -> " + t.getName());
@@ -95,6 +95,6 @@ public class ShortestACO implements Serializable {
             }
         }
         // System.out.println(newPath.getNodes().stream().map(it -> it.getName()).toList());
-        HttpClient.post("http://localhost:8080/graph/updateNodes", newPath);
+        // HttpClient.post("http://localhost:8080/graph/updateNodes", newPath);
     }
 }
