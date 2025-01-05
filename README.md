@@ -19,6 +19,8 @@ Descreva o seu projeto em linhas gerais.
 Use referências, links, que permitam conhecer um pouco mais sobre o projeto.
 Capriche nessa seção, pois ela é a primeira a ser lida pelos interessados no projeto.
 
+- Acesse a documentação completa do projeto [aqui](https://unbsma2024-2.github.io/2024.2_Grupo03_SMA_Comportamental/about/).
+
 ## Screenshots
 
 Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
