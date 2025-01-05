@@ -5,7 +5,7 @@ public class AntColonyOptimization {
     public static void main(String[] args) {
         Graph grp = new Graph();
         grp.buildGraph();
-        grp.printGraph();
+        //grp.printGraph();
         
         grp.defineStart("Como");
         grp.defineEnd("Pavia");

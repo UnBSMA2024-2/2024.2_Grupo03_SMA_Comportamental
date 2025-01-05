@@ -58,6 +58,9 @@ public class Ant {
 			this.currentFoundPath.calculateTotaLength();
 		}
 
+		System.out.println("Current path:");
+		System.out.println(currentFoundPath.getPathNodes().stream().map(it -> it.getName()).toList());
+
 		return true;
 	}
 	

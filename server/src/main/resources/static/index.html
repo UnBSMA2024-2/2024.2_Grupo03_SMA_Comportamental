@@ -1,15 +1,54 @@
-<!doctype html>
+<!DOCTYPE>
+
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Truck Simulator</title>
+    <title>cytoscape-euler.js demo</title>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+    <script src="./js/libs/bluebird.js"></script>
+    <script src="./js/libs/fetch.js"></script>
+    <script src="./js/libs/cytoscape.js"></script>
+
+    <!-- for testing with local version of cytoscape.js -->
+    <!--<script src="../cytoscape.js/build/cytoscape.js"></script>-->
+
+    <script src="js/libs/cytoscape-euler.js"></script>
+
+    <style>
+        body {
+            font-family: helvetica neue, helvetica, liberation sans, arial, sans-serif;
+            font-size: 14px;
+        }
+
+        #cy {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        h1 {
+            opacity: 0.5;
+            font-size: 1em;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        </script>
 
     <script src="js/main.js" type="module"></script>
 </head>
+
 <body>
-    <main id="app"></main>
+    <h1>cytoscape-euler demo</h1>
+
+    <div id="cy"></div>
+
 </body>
+
 </html>

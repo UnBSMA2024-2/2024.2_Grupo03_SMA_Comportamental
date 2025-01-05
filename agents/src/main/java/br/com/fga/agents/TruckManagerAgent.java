@@ -129,7 +129,8 @@ public class TruckManagerAgent extends Agent implements Observer {
 
         @Override
         public boolean done() {
-            boolean isDone = (interactions >= ShortestACOConstants.MAX_ITERATIONS) && (System.currentTimeMillis() - startTime <= ShortestACOConstants.MAX_TIME_TO_WAIT);
+            DFAgentDescription[] result = agentService.search(getAgent(), "explore-map-service");
+            boolean isDone = (interactions >= result.length) && (System.currentTimeMillis() - startTime <= ShortestACOConstants.MAX_TIME_TO_WAIT);
 
             if (isDone) {
                 if (aco.getBestPathLength() != 0) {
@@ -144,6 +145,8 @@ public class TruckManagerAgent extends Agent implements Observer {
                 } else {
                     System.out.println("\n\n" + "No path found. Maybe The node is not connected");
                 }
+
+                interactions = 0;
 
                 return true;
             }

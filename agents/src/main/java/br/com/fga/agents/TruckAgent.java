@@ -112,7 +112,7 @@ public class TruckAgent extends Agent {
                         .map(it -> it.getName().getLocalName())
                         .toList();
 
-                int responseCode = HttpClient.post("http://localhost:8080/ants/agents", agentsName);
+                int responseCode = HttpClient.post("http://localhost:8080/vehicles/agents", agentsName);
 
                 isDone = (responseCode == 200);
             }

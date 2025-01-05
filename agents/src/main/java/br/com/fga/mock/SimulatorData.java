@@ -16,12 +16,12 @@ public class SimulatorData implements Serializable {
         new Simulation(new Position(0, 0), VehicleData.get(0)),
         new Simulation(new Position(0, 0), VehicleData.get(1)),
         new Simulation(new Position(0, 0), VehicleData.get(2)),
-            new Simulation(new Position(0, 0), VehicleData.get(3)),
-            new Simulation(new Position(0, 0), VehicleData.get(4)),
-            new Simulation(new Position(0, 0), VehicleData.get(5)),
-            new Simulation(new Position(0, 0), VehicleData.get(6)),
-            new Simulation(new Position(0, 0), VehicleData.get(7)),
-            new Simulation(new Position(0, 0), VehicleData.get(8))
+        new Simulation(new Position(0, 0), VehicleData.get(3)),
+        new Simulation(new Position(0, 0), VehicleData.get(4)),
+        new Simulation(new Position(0, 0), VehicleData.get(5)),
+        new Simulation(new Position(0, 0), VehicleData.get(6)),
+        new Simulation(new Position(0, 0), VehicleData.get(7)),
+        new Simulation(new Position(0, 0), VehicleData.get(8))
     );
 
     public static List<Simulation> getSimulationData() {

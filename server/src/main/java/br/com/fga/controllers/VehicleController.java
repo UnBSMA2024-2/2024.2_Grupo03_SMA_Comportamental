@@ -17,7 +17,7 @@ public class VehicleController {
     @Autowired
     private SimpMessagingTemplate simpMessagingTemplate;
 
-    @PostMapping("/vehicles")
+    @PostMapping("/agents")
     public ResponseEntity<Void> notifyAntBirth(@RequestBody List<String> ants) {
         simpMessagingTemplate.convertAndSend("/topic/vehicles/agents/alive", ants);
         return ResponseEntity.ok().build();
