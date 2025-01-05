@@ -1,0 +1,42 @@
+site_name: SMU Grupo 3
+
+nav:
+  - Início: index.md
+  - Guia de instalação: guia-instalacao.md
+  
+    
+  - Sobre: about.md
+
+theme:
+  font:
+    text: Roboto
+  language: pt-BR
+  name: material
+  features:
+    - navigation.tabs
+    - content.code.copy
+    - navigation.instant
+    - navigation.instant.progress
+    - toc.integrate
+    - navigation.top
+    - content.tabs.link
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  icon:
+    repo: fontawesome/brands/git-alt
