@@ -8,7 +8,7 @@ import jade.wrapper.StaleProxyException;
 
 public class MainContainer {
 
-    public static void main(String[] args) {
+    public static void bootstrap() {
         AgentService agentService = AgentServiceImpl.getInstance();
 
         AgentController truckManagerController = agentService.createAgent("TruckManagerController", TruckManagerAgent.class.getName(), null);
@@ -21,6 +21,10 @@ public class MainContainer {
         } catch (StaleProxyException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void main(String[] args) {
+        bootstrap();
     }
 
 }

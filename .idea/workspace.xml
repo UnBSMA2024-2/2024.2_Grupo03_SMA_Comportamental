@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4467710-b66a-4c7b-bf15-5ed7e72708ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/main/resources/static/graph.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/resources/static/js/libs/cytoscape-euler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/resources/static/planar-chain.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/Ant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/Path.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/MainContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/MainContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/ShortestACO.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/ShortestACO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/external-data/graph.json" beforeDir="false" afterPath="$PROJECT_DIR$/external-data/graph.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/GraphController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/GraphController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/mock/SimulatorData.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/mock/SimulatorData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/br/com/fga/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/br/com/fga/DemoApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +106,7 @@
       <recent name="org.fga.tcc.services" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AntColonyOptimization">
+  <component name="RunManager" selected="Application.MainContainer">
     <configuration name="AntColonyOptimization" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.fga.aco.AntColonyOptimization" />
       <module name="agents" />
@@ -184,9 +180,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AntColonyOptimization" />
-        <item itemvalue="Application.DemoApplication" />
         <item itemvalue="Application.MainContainer" />
+        <item itemvalue="Application.DemoApplication" />
+        <item itemvalue="Application.AntColonyOptimization" />
         <item itemvalue="Application.HttpClient" />
         <item itemvalue="Makefile Target.run" />
       </list>
@@ -205,5 +201,21 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java</url>
+          <line>179</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

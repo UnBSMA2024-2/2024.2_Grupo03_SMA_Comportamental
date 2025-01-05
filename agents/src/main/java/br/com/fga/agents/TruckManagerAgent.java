@@ -10,6 +10,7 @@ import br.com.fga.services.impl.AgentServiceImpl;
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
+import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.OneShotBehaviour;
 import jade.core.behaviours.SequentialBehaviour;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
@@ -33,6 +34,14 @@ public class TruckManagerAgent extends Agent implements Observer {
     private final Graph graph = new Graph();
     private ShortestACO aco;
 
+    private int interactions = 0;
+    /*
+     * Controla o número de vezes que o nó inicial é enviado, evitando que um novo nó
+     * seja enviado antes de receber a confirmação do envio anterior. Basicamente esperamos
+     * todas as formigas terminarem o trajeto antes de iniciar o próximo
+     * */
+    private boolean isWaitingForAnswer = false;
+
     @Override
     protected void setup() {
         graph.buildGraph();
@@ -48,6 +57,7 @@ public class TruckManagerAgent extends Agent implements Observer {
 
         addBehaviour(acoSequentialBehavior);
         addBehaviour(new SendGraphDataBehaviour());
+        addBehaviour(new ACOWaitForResponseBehaviour());
 
         graph.addObserver(this);
     }
@@ -82,14 +92,6 @@ public class TruckManagerAgent extends Agent implements Observer {
         @Serial
         private static final long serialVersionUID = -98891813951915183L;
 
-        private int interactions = 0;
-
-        /*
-         * Controla o número de vezes que o nó inicial é enviado, evitando que um novo nó
-         * seja enviado antes de receber a confirmação do envio anterior.
-         * */
-        private boolean isWaitingForAnswer = false;
-
         private final long startTime;
 
         public ACOBehaviour() {
@@ -105,12 +107,14 @@ public class TruckManagerAgent extends Agent implements Observer {
 
                     if (result.length > 0) {
                         // TODO: tratar caso do agente Truck recusar a requisição
-                        AID serviceProvider = result[0].getName();
                         ACLMessage startTripMessage = new ACLMessage(ACLMessage.REQUEST);
 
-                        startTripMessage.addReceiver(serviceProvider);
-                        startTripMessage.setContentObject(graph.getStart());
+                        for (DFAgentDescription agentDescription : result) {
+                            AID serviceProvider = agentDescription.getName();
+                            startTripMessage.addReceiver(serviceProvider);
+                        }
 
+                        startTripMessage.setContentObject(graph.getStart());
                         send(startTripMessage);
                         isWaitingForAnswer = true;
                     } else {
@@ -119,25 +123,6 @@ public class TruckManagerAgent extends Agent implements Observer {
                 }
             } catch (IOException e) {
                 throw new RuntimeException(e);
-            }
-
-            MessageTemplate messageTemplate = MessageTemplate.MatchPerformative(ACLMessage.CONFIRM);
-            ACLMessage message = receive(messageTemplate);
-
-            if (message == null) {
-                block();
-            } else {
-                String content = null;
-                try {
-                    content = (String) message.getContentObject();
-
-                    if (content.equals("OK")) {
-                        interactions++;
-                        isWaitingForAnswer = false;
-                    }
-                } catch (UnreadableException e) {
-                    throw new RuntimeException(e);
-                }
             }
 
         }
@@ -166,6 +151,43 @@ public class TruckManagerAgent extends Agent implements Observer {
             graph.updateEdges();
 
             return false;
+        }
+    }
+
+    private class ACOWaitForResponseBehaviour extends CyclicBehaviour {
+
+        @Serial
+        private static final long serialVersionUID = 4370136558332471150L;
+
+        private int contResponses = 0;
+
+        @Override
+        public void action() {
+            DFAgentDescription[] result = agentService.search(getAgent(), "explore-map-service");
+
+            MessageTemplate messageTemplate = MessageTemplate.MatchPerformative(ACLMessage.CONFIRM);
+            ACLMessage message = receive(messageTemplate);
+
+            if (message == null) {
+                block();
+            } else {
+                String content = null;
+                try {
+                    content = (String) message.getContentObject();
+
+                    if (content.equals("OK")) {
+                        interactions++;
+                        contResponses++;
+
+                        if (contResponses == result.length) {
+                            isWaitingForAnswer = false;
+                            contResponses = 0;
+                        }
+                    }
+                } catch (UnreadableException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
     }
 

@@ -7,7 +7,6 @@
 
 package br.com.fga.aco;
 
-import br.com.fga.http.HttpClient;
 import lombok.Getter;
 
 import java.io.Serial;
