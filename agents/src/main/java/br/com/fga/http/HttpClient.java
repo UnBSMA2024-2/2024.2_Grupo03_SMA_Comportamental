@@ -46,6 +46,7 @@ public class HttpClient {
             URI uri = new URI(path);
             URL url = uri.toURL();
             HttpURLConnection conn = getHttpURLConnection(url, "POST");
+            conn.connect();
 
             String jsonInput = mapper.writeValueAsString(data);
 

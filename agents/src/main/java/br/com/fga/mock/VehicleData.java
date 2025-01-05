@@ -13,9 +13,18 @@ public class VehicleData implements Serializable {
     private static final long serialVersionUID = 2197516400193141803L;
 
     public static final List<Vehicle> VEHICLE_LIST = List.of(
-        new Truck(40.0, "red", 3),
-        new Truck(60.0, "green", 5),
-        new Truck(78.3, "blue", 6)
+            new Truck(40.0, "red", 3),
+            new Truck(60.0, "green", 5),
+            new Truck(78.3, "blue", 6),
+            new Truck(40.0, "red", 3),
+            new Truck(60.0, "green", 5),
+            new Truck(78.3, "blue", 6),
+            new Truck(40.0, "red", 3),
+            new Truck(60.0, "green", 5),
+            new Truck(78.3, "blue", 6),
+            new Truck(40.0, "red", 3),
+            new Truck(60.0, "green", 5),
+            new Truck(78.3, "blue", 6)
     );
 
     public static Vehicle get(int index) {
