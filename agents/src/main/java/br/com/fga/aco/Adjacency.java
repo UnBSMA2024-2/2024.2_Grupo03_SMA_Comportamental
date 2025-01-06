@@ -35,7 +35,6 @@ public class Adjacency implements Serializable {
 		this.setPheromone(ShortestACOConstants.THETA0);
 	}
 	
-	
 	public void addPheromone(float pheromone) {
         this.setPheromone(Math.min((this.pheromone + pheromone), ShortestACOConstants.THETA_MAX));
 	}

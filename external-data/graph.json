@@ -1,301 +1,673 @@
 {
   "nodes": [
     {
-      "node": "Milano",
+      "node": "Aracaju",
       "position": {
-        "x": 10,
-        "y": 20
+        "x": 190,
+        "y": 140
       },
       "edges": [
         {
-          "node": "Pavia",
-          "distance": 46
+          "node": "Maceió",
+          "distance": 274
         },
         {
-          "node": "Varese",
-          "distance": 59
-        },
-        {
-          "node": "Lodi",
-          "distance": 41
-        },
-        {
-          "node": "Monza",
-          "distance": 18
-        },
-        {
-          "node": "Bergamo",
-          "distance": 51
-        },
-        {
-          "node": "Cremona",
-          "distance": 99
+          "node": "Salvador",
+          "distance": 324
         }
       ]
     },
     {
-      "node": "Pavia",
+      "node": "Belém",
       "position": {
-        "x": 10,
-        "y": 20
+        "x": 140,
+        "y": 180
       },
       "edges": [
         {
-          "node": "Milano",
-          "distance": 46
+          "node": "Macapá",
+          "distance": 528
         },
         {
-          "node": "Lodi",
-          "distance": 34
+          "node": "Manaus",
+          "distance": 2993
+        },
+        {
+          "node": "Palmas",
+          "distance": 1143
+        },
+        {
+          "node": "São Luís",
+          "distance": 576
+        },
+        {
+          "node": "Cuiabá",
+          "distance": 2326
+        },
+        {
+          "node": "Boa Vista",
+          "distance": 3740
         }
       ]
     },
     {
-      "node": "Varese",
+      "node": "Belo Horizonte",
       "position": {
-        "x": 10,
-        "y": 20
+        "x": 160,
+        "y": 100
       },
       "edges": [
         {
-          "node": "Como",
-          "distance": 28
+          "node": "Brasília",
+          "distance": 733
         },
         {
-          "node": "Monza",
-          "distance": 74
+          "node": "Rio de Janeiro",
+          "distance": 441
         },
         {
-          "node": "Milano",
-          "distance": 59
+          "node": "São Paulo",
+          "distance": 582
+        },
+        {
+          "node": "Vitória",
+          "distance": 514
+        },
+        {
+          "node": "Goiânia",
+          "distance": 887
+        },
+        {
+          "node": "Salvador",
+          "distance": 1350
         }
       ]
     },
     {
-      "node": "Como",
+      "node": "Boa Vista",
       "position": {
-        "x": 10,
-        "y": 20
+        "x": 70,
+        "y": 205
       },
       "edges": [
         {
-          "node": "Varese",
-          "distance": 28
+          "node": "Manaus",
+          "distance": 746
         },
         {
-          "node": "Sondrio",
-          "distance": 112
-        },
-        {
-          "node": "Lecco",
-          "distance": 31
-        },
-        {
-          "node": "Monza",
-          "distance": 41
+          "node": "Belém",
+          "distance": 3737
         }
       ]
     },
     {
-      "node": "Cremona",
+      "node": "Brasília",
       "position": {
-        "x": 10,
-        "y": 20
+        "x": 140,
+        "y": 120
       },
       "edges": [
         {
-          "node": "Lodi",
-          "distance": 49
+          "node": "Belo Horizonte",
+          "distance": 739
         },
         {
-          "node": "Milano",
-          "distance": 99
-        },
-        {
-          "node": "Bergamo",
-          "distance": 103
-        },
-        {
-          "node": "Brescia",
-          "distance": 56
-        },
-        {
-          "node": "Mantova",
-          "distance": 41
+          "node": "Goiânia",
+          "distance": 208
         }
       ]
     },
     {
-      "node": "Lecco",
+      "node": "Campo Grande",
       "position": {
-        "x": 10,
-        "y": 20
+        "x": 60,
+        "y": 100
       },
       "edges": [
         {
-          "node": "Monza",
-          "distance": 41
+          "node": "Cuiabá",
+          "distance": 703
         },
         {
-          "node": "Como",
-          "distance": 31
+          "node": "Goiânia",
+          "distance": 839
         },
         {
-          "node": "Sondrio",
-          "distance": 80
+          "node": "Curitiba",
+          "distance": 976
         },
         {
-          "node": "Bergamo",
-          "distance": 41
+          "node": "Belo Horizonte",
+          "distance": 1261
+        },
+        {
+          "node": "São Paulo",
+          "distance": 984
         }
       ]
     },
     {
-      "node": "Lodi",
+      "node": "Cuiabá",
       "position": {
-        "x": 10,
-        "y": 20
+        "x": 110,
+        "y": 60
       },
       "edges": [
         {
-          "node": "Pavia",
-          "distance": 34
+          "node": "Campo Grande",
+          "distance": 708
         },
         {
-          "node": "Milano",
-          "distance": 41
+          "node": "Palmas",
+          "distance": 1540
         },
         {
-          "node": "Cremona",
-          "distance": 49
+          "node": "Porto Velho",
+          "distance": 1461
+        },
+        {
+          "node": "Manaus",
+          "distance": 2349
+        },
+        {
+          "node": "Goiânia",
+          "distance": 897
+        },
+        {
+          "node": "Belém",
+          "distance": 2335
         }
       ]
     },
     {
-      "node": "Mantova",
+      "node": "Curitiba",
       "position": {
-        "x": 10,
-        "y": 20
+        "x": 130,
+        "y": 90
       },
       "edges": [
         {
-          "node": "Cremona",
-          "distance": 69
+          "node": "Campo Grande",
+          "distance": 974
         },
         {
-          "node": "Brescia",
-          "distance": 95
+          "node": "Porto Alegre",
+          "distance": 742
+        },
+        {
+          "node": "Florianópolis",
+          "distance": 307
+        },
+        {
+          "node": "São Paulo",
+          "distance": 416
         }
       ]
     },
     {
-      "node": "Monza",
+      "node": "Florianópolis",
       "position": {
-        "x": 10,
-        "y": 20
+        "x": 135,
+        "y": 40
       },
       "edges": [
         {
-          "node": "Varese",
-          "distance": 74
+          "node": "Curitiba",
+          "distance": 306
         },
         {
-          "node": "Milano",
-          "distance": 18
-        },
-        {
-          "node": "Bergamo",
-          "distance": 40
-        },
-        {
-          "node": "Como",
-          "distance": 41
-        },{
-          "node": "Lecco",
-          "distance": 41
+          "node": "Porto Alegre",
+          "distance": 463
         }
       ]
     },
     {
-      "node": "Sondrio",
+      "node": "Fortaleza",
       "position": {
-        "x": 10,
-        "y": 20
+        "x": 180,
+        "y": 170
       },
       "edges": [
         {
-          "node": "Como",
-          "distance": 112
+          "node": "Natal",
+          "distance": 524
         },
         {
-          "node": "Lecco",
-          "distance": 80
+          "node": "Teresina",
+          "distance": 603
         },
         {
-          "node": "Bergamo",
-          "distance": 123
+          "node": "João Pessoa",
+          "distance": 673
         },
         {
-          "node": "Brescia",
-          "distance": 139
+          "node": "Recife",
+          "distance": 779
+        } 
+      ]
+    },
+    {
+      "node": "Goiânia",
+      "position": {
+        "x": 135,
+        "y": 115
+      },
+      "edges": [
+        {
+          "node": "Brasília",
+          "distance": 207
+        },
+        {
+          "node": "Cuiabá",
+          "distance": 888
+        },
+        {
+          "node": "Campo Grande",
+          "distance": 839
+        },
+        {
+          "node": "Palmas",
+          "distance": 824
+        },
+        {
+          "node": "Salvador",
+          "distance": 1646
+        },
+        {
+          "node": "Belo Horizonte",
+          "distance": 891
         }
       ]
     },
     {
-      "node": "Bergamo",
+      "node": "João Pessoa",
       "position": {
-        "x": 10,
-        "y": 20
+        "x": 200,
+        "y": 155
       },
       "edges": [
         {
-          "node": "Brescia",
-          "distance": 52
+          "node": "Natal",
+          "distance": 181
         },
         {
-          "node": "Sondrio",
-          "distance": 123
+          "node": "Recife",
+          "distance": 116
         },
         {
-          "node": "Lecco",
-          "distance": 41
-        },
-        {
-          "node": "Monza",
-          "distance": 40
-        },
-        {
-          "node": "Milano",
-          "distance": 51
-        },
-        {
-          "node": "Cremona",
-          "distance": 103
+          "node": "Fortaleza",
+          "distance": 671
         }
       ]
     },
     {
-      "node": "Brescia",
+      "node": "Macapá",
       "position": {
-        "x": 10,
-        "y": 20
+        "x": 130,
+        "y": 190
       },
       "edges": [
         {
-          "node": "Sondrio",
-          "distance": 139
+          "node": "Belém",
+          "distance": 528
         },
         {
-          "node": "Bergamo",
-          "distance": 52
+          "node": "Manaus",
+          "distance": 3008
         },
         {
-          "node": "Cremona",
-          "distance": 56
+          "node": "São Luís",
+          "distance": 1088
+        }
+      ]
+    },
+    {
+      "node": "Maceió",
+      "position": {
+        "x": 200,
+        "y": 145
+      },
+      "edges": [
+        {
+          "node": "Aracaju",
+          "distance": 272
         },
         {
-          "node": "Mantova",
-          "distance": 95
+          "node": "Recife",
+          "distance": 256
+        },
+        {
+          "node": "Salvador",
+          "distance": 578
+        }
+      ]
+    },
+    {
+      "node": "Manaus",
+      "position": {
+        "x": 80,
+        "y": 180
+      },
+      "edges": [
+        {
+          "node": "Boa Vista",
+          "distance": 747
+        },
+        {
+          "node": "Belém",
+          "distance": 2992
+        },
+        {
+          "node": "Macapá",
+          "distance": 3008
+        },
+        {
+          "node": "Porto Velho",
+          "distance": 889
+        },
+        {
+          "node": "Rio Branco",
+          "distance": 1397
+        },
+        {
+          "node": "Cuiabá",
+          "distance": 2349
+        }
+      ]
+    },
+    {
+      "node": "Natal",
+      "position": {
+        "x": 200,
+        "y": 160
+      },
+      "edges": [
+        {
+          "node": "Fortaleza",
+          "distance": 522
+        },
+        {
+          "node": "João Pessoa",
+          "distance": 181
+        }
+      ]
+    },
+    {
+      "node": "Palmas",
+      "position": {
+        "x": 140,
+        "y": 150
+      },
+      "edges": [
+        {
+          "node": "Goiânia",
+          "distance": 824
+        },
+        {
+          "node": "Belém",
+          "distance": 1144
+        },
+        {
+          "node": "Cuiabá",
+          "distance": 1530
+        },
+        {
+          "node": "São Luís",
+          "distance": 1253
+        },
+        {
+          "node": "Teresina",
+          "distance": 1113
+        },
+        {
+          "node": "Salvador",
+          "distance": 1438
+        }
+      ]
+    },
+    {
+      "node": "Porto Alegre",
+      "position": {
+        "x": 125,
+        "y": 25
+      },
+      "edges": [
+        {
+          "node": "Florianópolis",
+          "distance": 463
+        },
+        {
+          "node": "Curitiba",
+          "distance": 742
+        }
+      ]
+    },
+    {
+      "node": "Porto Velho",
+      "position": {
+        "x": 50,
+        "y": 150
+      },
+      "edges": [
+        {
+          "node": "Manaus",
+          "distance": 889
+        },
+        {
+          "node": "Cuiabá",
+          "distance": 1460
+        },
+        {
+          "node": "Rio Branco",
+          "distance": 510
+        }
+      ]
+    },
+    {
+      "node": "Recife",
+      "position": {
+        "x": 200,
+        "y": 150
+      },
+      "edges": [
+        {
+          "node": "João Pessoa",
+          "distance": 116
+        },
+        {
+          "node": "Maceió",
+          "distance": 257
+        },
+        {
+          "node": "Salvador",
+          "distance": 806
+        },
+        {
+          "node": "Teresina",
+          "distance": 1125
+        },
+        {
+          "node": "Fortaleza",
+          "distance": 777
+        }
+      ]
+    },
+    {
+      "node": "Rio Branco",
+      "position": {
+        "x": 20,
+        "y": 140
+      },
+      "edges": [
+        {
+          "node": "Porto Velho",
+          "distance": 509
+        },
+        {
+          "node": "Manaus",
+          "distance": 1395
+        }
+      ]
+    },
+    {
+      "node": "Rio de Janeiro",
+      "position": {
+        "x": 160,
+        "y": 70
+      },
+      "edges": [
+        {
+          "node": "São Paulo",
+          "distance": 446
+        },
+        {
+          "node": "Belo Horizonte",
+          "distance": 441
+        },
+        {
+          "node": "Vitória",
+          "distance": 517
+        }
+      ]
+    },
+    {
+      "node": "Salvador",
+      "position": {
+        "x": 180,
+        "y": 130
+      },
+      "edges": [
+        {
+          "node": "Aracaju",
+          "distance": 324
+        },
+        {
+          "node": "Vitória",
+          "distance": 1175
+        },
+        {
+          "node": "Belo Horizonte",
+          "distance": 1432
+        },
+        {
+          "node": "Goiânia",
+          "distance": 1646
+        },
+        {
+          "node": "Palmas",
+          "distance": 1477
+        },
+        {
+          "node": "Teresina",
+          "distance": 1150
+        },
+        {
+          "node": "Recife",
+          "distance": 809
+        },
+        {
+          "node": "Maceió",
+          "distance": 581
+        }
+      ]
+    },
+    {
+      "node": "São Luís",
+      "position": {
+        "x": 160,
+        "y": 180
+      },
+      "edges": [
+        {
+          "node": "Belém",
+          "distance": 579
+        },
+        {
+          "node": "Macapá",
+          "distance": 1088
+        },
+        {
+          "node": "Teresina",
+          "distance": 436
+        },
+        {
+          "node": "Palmas",
+          "distance": 1253
+        }
+      ]
+    },
+    {
+      "node": "São Paulo",
+      "position": {
+        "x": 145,
+        "y": 70
+      },
+      "edges": [
+        {
+          "node": "Rio de Janeiro",
+          "distance": 446
+        },
+        {
+          "node": "Belo Horizonte",
+          "distance": 585
+        },
+        {
+          "node": "Curitiba",
+          "distance": 402
+        },
+        {
+          "node": "Campo Grande",
+          "distance": 983
+        }
+      ]
+    },
+    {
+      "node": "Teresina",
+      "position": {
+        "x": 165,
+        "y": 165
+      },
+      "edges": [
+        {
+          "node": "Fortaleza",
+          "distance": 604
+        },
+        {
+          "node": "São Luís",
+          "distance": 433
+        },
+        {
+          "node": "Recife",
+          "distance": 1126
+        },
+        {
+          "node": "Salvador",
+          "distance": 1157
+        },
+        {
+          "node": "Palmas",
+          "distance": 1112
+        }
+      ]
+    },
+    {
+      "node": "Vitória",
+      "position": {
+        "x": 170,
+        "y": 95
+      },
+      "edges": [
+        {
+          "node": "Belo Horizonte",
+          "distance": 515
+        },
+        {
+          "node": "Salvador",
+          "distance": 1056
+        },
+        {
+          "node": "Rio de Janeiro",
+          "distance": 518
         }
       ]
     }

@@ -11,7 +11,7 @@ public abstract class ShortestACOConstants {
 	
 	public static final int MAX_ITERATIONS = 460;	
 	
-	public static final int MAX_TIME_TO_WAIT = 3000; 
+	public static final int MAX_TIME_TO_WAIT = 300; 
 	
 	public static final int NUM_ANTS = 1;
 
