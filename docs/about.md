@@ -3,11 +3,13 @@
 ## Sobre os integrantes
 
 
-**Douglas da Silva** estudante de Engenharia de Software e apaixonado por programação.
+**Douglas da Silva:** estudante de Engenharia de Software , Java.
 
 **Mateus Bastos:** estudante de Engenharia de Software entusiasta da programação procedural.
 
+**Kathlyn Lara Murussi:** estudante de Engenharia de Software e apaixonado por programação.
 
+**Rodrigo Santos:** estudante de Engenharia de Software e apaixonado por programação.
 
 
 ---
@@ -18,7 +20,7 @@
         <td align="center">
             <a href="https://github.com/DouglasMonteles">
                 <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/54580766?v=4" width="150px;"/>
-                <h5 class="text-center">Gabriel Lima</h5>
+                <h5 class="text-center">Douglas Monteles</h5>
             </a>
         </td>
           </td>
@@ -28,7 +30,21 @@
                 <h5 class="text-center">Mateus Bastos</h5>
             </a>
         </td>
-        
+            </td>
+        <td align="center">
+            <a href="https://github.com/klmurussi">
+                <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/52364259?v=4" width="150px;"/>
+                <h5 class="text-center">Lara Murussi</h5>
+            </a>
+        </td>
+            </td>
+        <td align="center">
+             <a href="https://github.com/Rocsantos">
+                <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/42697323?v=4" width="150px;"/>
+                <h5 class="text-center">Rodrigo Santos</h5>
+            </a>
+        </td>
+            </td>
         
     
     
