@@ -43,7 +43,6 @@ public class Ant {
 		this.currentFoundPath.addGraphNode(this.currentNode);
 		this.alreadyVisited.add(currentNode);
 	}
-		
 	
 	public boolean startTrip() {
 		while (!this.currentNode.equals(this.sACO.getEndNode()) && !this.currentNode.equals(this.nullNode)) {
@@ -60,7 +59,6 @@ public class Ant {
 
 		return true;
 	}
-	
 	
 	private void selectNextNode() {
 		Random rand = new Random();
@@ -136,7 +134,6 @@ public class Ant {
 			}
 		}
 	}
-	
 	
 	public void applyPheromone() {
 		if (this.currentFoundPath.getTotaLength() != 0) {

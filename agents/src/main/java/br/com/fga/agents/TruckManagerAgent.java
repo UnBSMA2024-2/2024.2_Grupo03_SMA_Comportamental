@@ -46,8 +46,8 @@ public class TruckManagerAgent extends Agent implements Observer {
     protected void setup() {
         graph.buildGraph();
 
-        graph.defineStart("Como");
-        graph.defineEnd("Pavia");
+        graph.defineStart("Brasília");
+        graph.defineEnd("Manaus");
 
         aco = new ShortestACO(graph);
 
@@ -176,12 +176,12 @@ public class TruckManagerAgent extends Agent implements Observer {
                     content = (String) message.getContentObject();
 
                     if (content.equals("OK")) {
-                        interactions++;
                         contResponses++;
 
                         if (contResponses == result.length) {
                             isWaitingForAnswer = false;
                             contResponses = 0;
+                            interactions++;
                         }
                     }
                 } catch (UnreadableException e) {
@@ -203,7 +203,7 @@ public class TruckManagerAgent extends Agent implements Observer {
             status = HttpClient.post("http://localhost:8080/graph/update", graph);
 
             if (status != 200) {
-                block(PeriodBehaviour.ONE_SECOND.value());
+                block();
             }
         }
 
