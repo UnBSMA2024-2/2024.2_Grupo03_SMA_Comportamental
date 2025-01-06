@@ -76,6 +76,17 @@ document.addEventListener('DOMContentLoaded', function () {
       },
 
       {
+        selector: '.red',
+        style: {
+          'background-color': 'red',
+          'line-color': 'red',
+          'target-arrow-color': 'red',
+          'transition-property': 'background-color, line-color, target-arrow-color',
+          'transition-duration': '0.5s'
+        }
+      },
+
+      {
         selector: '.truck',
         style: {
           'background-color': 'red',
@@ -165,20 +176,43 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   // --
 
+  let bestPath = {
+    nodes: [],
+    pheromones: [],
+  };
+
+  let lenBestPath = 0;
+
   // Topics to subscribe to
   sockJsService.subscribeTopic('/topic/graph/updateNodes', (message) => {
     const simulationBody = JSON.parse(message.body);
     // simulationScreen.renderScreen(simulationBody);
     const path = [];
+    const pheromones = [];
 
     console.log(simulationBody);
     simulationBody.forEach(node => {
       //console.log("No inicial: " + node.name);
       path.push(node.name);
+      pheromones.push(node.adjs.filter(edge => edge.name != node.name && edge.pheromone > 0.33)[0].pheromone);
       // console.log("caminho percorrido:");
       // console.log(node.adjs.map(edge => edge.name));
     });
+
+    if (bestPath.pheromones.length == 0 || bestPath.pheromones.length > pheromones.length) {
+      bestPath = {
+        nodes: path,
+        pheromones: pheromones,
+      };
+    }
+
+    if (lenBestPath < path.length) {
+      lenBestPath = path.length;
+    }
+
     console.log(path);
+    console.log(pheromones);
+    console.log(bestPath);
 
     //setTimeout(() => {
     const truckId = new Date().getTime().toString();
@@ -230,7 +264,24 @@ document.addEventListener('DOMContentLoaded', function () {
         // Adiciona feromônio no caminho
         const n1 = nodeA.data().name;
         const n2 = nodeB.data().name;
-        cy.getElementById(`edge${n1}-${n2}`).classes("highlighted");
+
+        let edgeName = `edge${n1}-${n2}`;
+
+        if (cy.getElementById(edgeName).classes().length <= 0) {
+          if (pheromones[0] >= 1.3) {
+            cy.getElementById(edgeName).classes("red");
+          } else {
+            cy.getElementById(edgeName).classes("highlighted");
+          }
+        } else {
+          if (pheromones[0] >= 1.3) {
+            cy.getElementById(edgeName).classes("red");
+          }
+        }
+
+        if (path.length > lenBestPath) {
+          cy.getElementById(edgeName).classes("highlighted");
+        }
 
         if (path.length > 0) {
           duration = 5000;
