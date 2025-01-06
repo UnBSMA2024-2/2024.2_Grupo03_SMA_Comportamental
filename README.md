@@ -8,7 +8,6 @@
 |Matrícula | Aluno |
 | ---------- | ---------------------------------------- |
 | 19/0012200 | Douglas da Silva Monteles                |
-| 16/0125162 | Ingrid da Cruz Galvao dos Santos Soares  |
 | 18/0042378 | Kathlyn Lara Murussi                     |
 | 21/1062240 | Mateus Bastos dos Santos                 |
 | 18/0027352 | Rodrigo Carvalho dos Santos              |
