@@ -31,10 +31,16 @@ class SimulationScreen {
   renderScreen(simulationData) {
     simulationData.forEach(city => {
       city.adjs.forEach(adj => {
-        const from = _nodes.find(node=>node.label == city.name).id;
-        const to = _nodes.find(node=>node.label == adj.name).id;
-        // const edgeId = _edges.find(edge=>edge.from==from && edge.to==to);
-        // this.edges.update([{id:edgeId, value:adj.pheromone*100}]);
+        try {
+          const from = _nodes.find(node=>node.label == city.name).id;
+          const to = _nodes.find(node=>node.label == adj.name).id;
+          const edgeId = _edges.find(edge=>edge.from==from && edge.to==to).id;
+          this.edges.update([{id:edgeId, value:adj.pheromone*100}]);
+        }
+        catch(err) {
+          console.error(err);
+        }
+        // console.log(edgeId);
       });
     });
   }
