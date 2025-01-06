@@ -17,11 +17,11 @@ window.onload = function() {
 // End global services
 
 // Topics to subscribe to
+let sentinel = 0;
 sockJsService.subscribeTopic('/topic/graph/updateNodes', (message) => {
   const simulationBody = JSON.parse(message.body);
   simulationScreen.renderScreen(simulationBody);
 
-  let sentinel = 0;
   while(sentinel++ < 10) {
   console.log(simulationBody);
   }
