@@ -77,6 +77,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) | Comprobatórios (ex. links para commits) |
 | -- | -- | -- | -- |
 | Douglas  | Criou a base do projeto | Excelente | [commit](https://github.com/UnBSMA2024-2/2024.1_Grupo03_SMA_Comportamental/commit/65c2dacbbac3a6acab3d453928c51de18200ecb4) |
+| Mateus  | Estruturou a documentação do Projeto | Regular | [commit](https://unbsma2024-2.github.io/2024.2_Grupo03_SMA_Comportamental/about/) |
 
 ## Outros 
 
