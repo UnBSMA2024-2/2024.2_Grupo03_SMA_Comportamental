@@ -15,11 +15,13 @@
 
 ## Sobre
 
-Descreva o seu projeto em linhas gerais. 
-Use referências, links, que permitam conhecer um pouco mais sobre o projeto.
-Capriche nessa seção, pois ela é a primeira a ser lida pelos interessados no projeto.
+Este projeto tem como objetivo desenvolver uma simulação para otimizar o processo de entrega de caminhões em um cenário logístico utilizando sistemas multiagentes.<br>
+A principal abordagem utilizada é o Ant Colony Optimization (ACO), um algoritmo inspirado no comportamento de formigas para resolver problemas de otimização, especialmente para o cálculo de rotas em problemas de roteirização de veículos (VRP, do inglês Vehicle Routing Problem).
 
-- Acesse a documentação completa do projeto [aqui](https://unbsma2024-2.github.io/2024.2_Grupo03_SMA_Comportamental/about/).
+No projeto, cada agente representa um caminhão e suas interações com o ambiente  são modeladas para realizar entregas de maneira eficiente, buscando minimizar custos com o tempo e distância percorrida.
+
+
+- Acesse a Documentação completa do projeto [aqui](https://unbsma2024-2.github.io/2024.2_Grupo03_SMA_Comportamental/about/).
 
 ## Screenshots
 
