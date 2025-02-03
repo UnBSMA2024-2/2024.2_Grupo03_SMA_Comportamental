@@ -12,6 +12,10 @@
 | 21/1062240 | Mateus Bastos dos Santos                 |
 | 18/0027352 | Rodrigo Carvalho dos Santos              |
 
+## Artigo
+
+Disponível [aqui](./artigo/SMA.pdf)
+
 ## Sobre
 
 Este projeto tem como objetivo desenvolver uma simulação para otimizar o processo de entrega de caminhões em um cenário logístico utilizando sistemas multiagentes.<br>
