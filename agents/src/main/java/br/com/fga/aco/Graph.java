@@ -10,7 +10,6 @@ package br.com.fga.aco;
 import br.com.fga.aco.dto.GraphDTO;
 import br.com.fga.aco.dto.NodeAdjacentDTO;
 import br.com.fga.aco.dto.NodeDTO;
-import br.com.fga.observables.Subject;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
@@ -28,7 +27,9 @@ import static java.lang.System.exit;
 
 @EqualsAndHashCode(callSuper = false)
 @Data
-public class Graph extends Subject implements Serializable {
+public class Graph implements Serializable {
+
+    public static Graph INSTANCE = new Graph();
 
     @Serial
     private static final long serialVersionUID = -3011226785646130427L;
@@ -38,49 +39,59 @@ public class Graph extends Subject implements Serializable {
     private GraphNode start;
 	private GraphNode end;
 
+    private String initialNode;
+    private String finalNode;
+
 	public Graph() {
 		this.nodes = new Vector<>();
 		this.start = new GraphNode(null);
 		this.end = new GraphNode(null);
+
+        buildGraph();
 	}
 
 	public void updateEdges() {
 		for (GraphNode t : nodes)
 			t.updateAdjacentEdges();
-        notifyAllObservers();
 	}
 
     public void defineStart(String name) {
-        boolean cond = FALSE;
+        if (name != null) {
+            this.initialNode = name;
+            boolean cond = FALSE;
 
-        for(GraphNode t : this.nodes) {
-            if (t.getName().equals(name)) {
-                this.start = t;
-                cond = TRUE;
-                break;
-		    }
-        }
+            for(GraphNode t : this.nodes) {
+                if (t.getName().equals(name)) {
+                    this.start = t;
+                    cond = TRUE;
+                    break;
+                }
+            }
 
-        if (!cond) {
-            System.out.println("\n\n" + "[!!] Error : Insert name of existing node");
-            exit(1);
+            if (!cond) {
+                System.out.println("\n\n" + "[!!] Error : Insert name of existing node");
+                exit(1);
+            }
         }
 	}
 
 	public void defineEnd(String name) {
-        boolean  cond = FALSE;
+        if (name != null) {
+            this.finalNode = name;
+            boolean  cond = FALSE;
 
-        for (GraphNode t : this.nodes) {
-            if (t.getName().equals(name)) {
-                this.end = t;
-                cond = TRUE;
-                break;
+            for (GraphNode t : this.nodes) {
+                if (t.getName().equals(name)) {
+                    this.end = t;
+                    cond = TRUE;
+                    break;
+                }
             }
-        }
 
-        if (!cond) {
-            System.out.println("\n\n" + "[!!] Error : Insert name of existing node");
-            exit(1);
+            if (!cond) {
+                System.out.println("\n\n" + "[!!] Error : Insert name of existing node");
+                exit(1);
+            }
         }
 	}
 	

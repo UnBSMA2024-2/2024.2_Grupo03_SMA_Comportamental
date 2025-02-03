@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4467710-b66a-4c7b-bf15-5ed7e72708ea" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/StartAgentApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/dto/GraphResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/br/com/fga/dtos/GraphDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/MainContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/MainContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/aco/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/http/HttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/http/HttpClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/observables/Observer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/src/main/java/br/com/fga/observables/Subject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/br/com/fga/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/br/com/fga/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/GraphController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/br/com/fga/controllers/GraphController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/static/graph.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/static/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/resources/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/static/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +63,7 @@
     "Application.GenerateTxtModel.executor": "Run",
     "Application.HttpClient.executor": "Run",
     "Application.ImdbReviewClassificationRNN.executor": "Debug",
-    "Application.MainContainer.executor": "Run",
+    "Application.MainContainer.executor": "Debug",
     "Application.PrepareWordVector.executor": "Run",
     "Application.TestNews.executor": "Run",
     "Application.TrainNews.executor": "Run",
@@ -95,11 +108,11 @@
       <recent name="$PROJECT_DIR$/server/src/main/resources/static" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.fga.aco.dto" />
       <recent name="br.com.fga.dtos" />
       <recent name="br.com.fga.controllers" />
       <recent name="br.com.fga.agents" />
       <recent name="org.fga.tcc.services.impl" />
-      <recent name="org.fga.tcc.services" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MainContainer">
@@ -197,5 +210,31 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/agents/src/main/java/br/com/fga/agents/TruckManagerAgent.java</url>
+          <line>127</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

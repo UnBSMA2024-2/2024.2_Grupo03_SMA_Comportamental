@@ -19,6 +19,8 @@ import java.util.Vector;
 @RequestMapping("/graph")
 public class GraphController {
 
+    private Graph graph = Graph.INSTANCE;
+
     @Autowired
     private SimpMessagingTemplate simpMessagingTemplate;
 
@@ -43,6 +45,19 @@ public class GraphController {
     public ResponseEntity<Void> update(@RequestBody Vector<GraphNode> graphNodes) {
         simpMessagingTemplate.convertAndSend("/topic/graph/updateNodes", graphNodes);
         return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/defineRoute")
+    public ResponseEntity<Void> defineRoute(@RequestBody br.com.fga.dtos.GraphDTO graphDTO) {
+        graph.defineStart(graphDTO.getInitialNode());
+        graph.defineEnd(graphDTO.getFinalNode());
+
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/defineRoute")
+    public ResponseEntity<br.com.fga.dtos.GraphDTO> getDefineRoute() {
+        return ResponseEntity.ok().body(new br.com.fga.dtos.GraphDTO(graph.getInitialNode(), graph.getFinalNode()));
     }
 
 }

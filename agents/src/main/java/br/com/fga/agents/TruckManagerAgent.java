@@ -1,12 +1,14 @@
 package br.com.fga.agents;
 
 import br.com.fga.aco.*;
+import br.com.fga.aco.dto.GraphResponseDTO;
 import br.com.fga.exceptions.AgentException;
 import br.com.fga.http.HttpClient;
 import br.com.fga.mock.SimulatorData;
-import br.com.fga.observables.Observer;
 import br.com.fga.services.AgentService;
 import br.com.fga.services.impl.AgentServiceImpl;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
@@ -24,14 +26,14 @@ import java.io.IOException;
 import java.io.Serial;
 import java.util.Vector;
 
-public class TruckManagerAgent extends Agent implements Observer {
+public class TruckManagerAgent extends Agent {
 
     @Serial
     private static final long serialVersionUID = 7792591193470292413L;
 
     private final AgentService agentService = AgentServiceImpl.getInstance();
 
-    private final Graph graph = new Graph();
+    private final Graph graph = Graph.INSTANCE;
     private ShortestACO aco;
 
     private int interactions = 0;
@@ -44,22 +46,14 @@ public class TruckManagerAgent extends Agent implements Observer {
 
     @Override
     protected void setup() {
-        graph.buildGraph();
-
-        graph.defineStart("Como");
-        graph.defineEnd("Pavia");
-
-        aco = new ShortestACO(graph);
-
         SequentialBehaviour acoSequentialBehavior = new SequentialBehaviour();
+        acoSequentialBehavior.addSubBehaviour(new DefineRouteBehaviour());
         acoSequentialBehavior.addSubBehaviour(new TruckBirthBehaviour());
         acoSequentialBehavior.addSubBehaviour(new ACOBehaviour());
 
         addBehaviour(acoSequentialBehavior);
         addBehaviour(new SendGraphDataBehaviour());
         addBehaviour(new ACOWaitForResponseBehaviour());
-
-        graph.addObserver(this);
     }
 
     private class TruckBirthBehaviour extends OneShotBehaviour {
@@ -87,6 +81,37 @@ public class TruckManagerAgent extends Agent implements Observer {
         }
     }
 
+    private class DefineRouteBehaviour extends Behaviour {
+
+        @Serial
+        private static final long serialVersionUID = 5414158829630172333L;
+
+        GraphResponseDTO response = null;
+
+        @Override
+        public void action() {
+            try {
+                Object resp = HttpClient.get("http://localhost:8080/graph/defineRoute");
+                if (resp != null)
+                    response = new ObjectMapper().readValue(resp.toString(), GraphResponseDTO.class);
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException(e);
+            }
+
+            if (response == null || (response.getInitialNode() == null || response.getFinalNode() == null))
+                return;
+
+            graph.defineStart(response.getInitialNode());
+            graph.defineEnd(response.getFinalNode());
+            aco = new ShortestACO(graph);
+        }
+
+        @Override
+        public boolean done() {
+            return response != null && response.getFinalNode() != null;
+        }
+    }
+
     private class ACOBehaviour extends Behaviour {
 
         @Serial
@@ -100,6 +125,10 @@ public class TruckManagerAgent extends Agent implements Observer {
 
         @Override
         public void action() {
+            if ((graph.getInitialNode() == null && graph.getFinalNode() == null) || interactions > 100) {
+                return;
+            }
+
             // Inicia a exploração das formigas
             try {
                 if (!isWaitingForAnswer) {
@@ -216,12 +245,4 @@ public class TruckManagerAgent extends Agent implements Observer {
         }
     }
 
-    @Override
-    public void update() {
-//        int status;
-//
-//        do {
-//            status = HttpClient.post("http://localhost:8080/graph/update", graph);
-//        } while (status != 200);
-    }
 }

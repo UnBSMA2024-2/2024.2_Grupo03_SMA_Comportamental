@@ -13,12 +13,25 @@ sockJsService.connect();
 // const simulationScreen = new SimulationScreen(mainContent);
 // End global services
 
+const selectedNodes = {
+    initialNode: null,
+    finalNode: null,
+};
+
+function clearNodeSelection() {
+    selectedNodes.initialNode = null;
+    selectedNodes.finalNode = null;
+
+    document.getElementById("start").innerHTML = "Clique em um ponto para definir o início";
+    document.getElementById("end").innerHTML = "Clique em um ponto para definir o fim";
+}
+
 function getRandomHexColor() {
   const randomHex = Math.floor(Math.random() * 16777215).toString(16);
   return `#${randomHex.padStart(6, '0')}`;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+function generateGraph() {
   // Gera o grafo
   var cy = window.cy = cytoscape({
     container: document.getElementById('cy'),
@@ -174,6 +187,32 @@ document.addEventListener('DOMContentLoaded', function () {
       ];
     })
   });
+
+  cy.on('tap', 'node', function(event) {
+    const node = event.target;
+    const { name } = node.data();
+
+    if (selectedNodes.initialNode == null) {
+        selectedNodes.initialNode = name;
+        document.getElementById("start").innerHTML = "Inicio: " + selectedNodes.initialNode;
+    } else if (selectedNodes.finalNode == null) {
+        selectedNodes.finalNode = name;
+        document.getElementById("end").innerHTML = "Fim: " + selectedNodes.finalNode;
+
+        fetch('http://localhost:8080/graph/defineRoute', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(selectedNodes)
+        })
+          .catch(error => {
+            console.error('Erro:', error);
+          });
+    }
+
+    console.log(selectedNodes);
+  });
   // --
 
   let bestPath = {
@@ -305,6 +344,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // End topics to subscribe
 
   // const path = ["Como", "Monza", "Lecco", "Bergamo", "Brescia"];
+}
 
+document.addEventListener('DOMContentLoaded', generateGraph);
 
-});
+window.clearNodeSelection = clearNodeSelection;

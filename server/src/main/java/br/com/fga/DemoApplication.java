@@ -11,7 +11,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 
 //		Thread serverThread = new Thread(() -> SpringApplication.run(DemoApplication.class, args));
-//		Thread agentsThread = new Thread(MainContainer::bootstrap);
+//		Thread agentsThread = new Thread(StartAgentApplication::bootstrap);
 //
 //		serverThread.start();
 //		// Espera o servidor subir
