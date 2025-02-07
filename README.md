@@ -66,14 +66,10 @@ Recomenda-se o uso do sistema operacional Linux ou alguma distribuição baseada
 
 ## Vídeo
 
-Adicione 1 ou mais vídeos com a execução do projeto.
-Procure: 
-(i) Introduzir o projeto;
-(ii) Mostrar passo a passo o código, explicando-o, e deixando claro o que é de terceiros, e o que é contribuição real da equipe;
-(iii) Apresentar particularidades do Paradigma, da Linguagem, e das Tecnologias, e
-(iV) Apresentar lições aprendidas, contribuições, pendências, e ideias para trabalhos futuros.
-OBS: TODOS DEVEM PARTICIPAR, CONFERINDO PONTOS DE VISTA.
-TEMPO: +/- 15min
+Apresentação final do Artigo e d o projeto:
+[Apresentação](https://youtu.be/mWgfeyMcyHs)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mWgfeyMcyHs?si=OPP9hOSvm-9ccJkr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Participações
 
@@ -88,13 +84,27 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 
 ## Outros 
 
-Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
-(i) Lições Aprendidas;
-(ii) Percepções;
-(iii) Contribuições e Fragilidades, e
-(iV) Trabalhos Futuros.
+(i) Lições Aprendidas: Problemas do mundo real que aparentam ter soluções computacionais complexas podem ser resulvidos simplismente observando como a natureza lida com esses mesmos problemas.
+
+(ii) Percepções: Quantidade nem sempre é sinônimo de qualidade. Ao implementar o sistema multiagentes que utiliza feromônio para determinar a melhor rota de entrega, aumentar a quantidade de caminhões percorrendo o mapa não faz com que a melhor solução se apresente mais rápido. 
+
+(iii) Contribuições e Fragilidades: Com este projeto, agora tem-se um exemplo de sistemas multiagentes com JADE e Springboot que se comunica utilizando requisições HTTP e Web Sockets.
+
+(iV) Trabalhos Futuros: Este projeto ainda está em fase inicial e precisa de ajustes para atingir o nível ideal. Por enquanto, pretende-se continuar estudando sobre o assunto e talvez tentar aplicar correções que melhorem esse algoritmo.
 
 ## Fontes
 
-Referencie, adequadamente, as referências utilizadas.
-Indique ainda sobre fontes de leitura complementares.
+> BRAND, Michael et al. Ant colony optimization algorithm for robot path planning. In: 2010 international conference on computer design and applications. IEEE, 2010. p. V3-436-V3-440.
+
+> COLORNI, Alberto et al. Distributed optimization by ant colonies. In: Proceedings of the first European conference on artificial life. 1991. p. 134-142.
+
+> DORIGO, Marco; BIRATTARI, Mauro; STUTZLE, Thomas. Ant colony optimization. IEEE computational intelligence magazine, v. 1, n. 4, p. 28-39, 2006.
+
+> FAISHAL, Rahaman Md. Research on Formation Control and Path Planning Optimization for Multiple Unmanned Vehicles Using Virtual Structure Approach. 2024.
+
+> GLABOWSKI, Mariusz et al. Shortest path problem solving based on ant colony optimization metaheuristic. Image Processing & Communications, v. 17, n. 1-2, p. 7, 2012.
+
+> STÜTZLE, Thomas; HOOS, Holger H. MAX–MIN Ant System. Future Generation Computer Systems, v. 16, n. 8, p. 889–914, 2000. DOI: https://doi.org/10.1016/S0167-739X(00)00043-1. Disponível em: https://www.sciencedirect.com/science/article/pii/S0167739X00000431. Acesso em: 25 nov. 2024.
+
+### Algoritmo utilizando
+> ZITO, Michele. Disponível em: <https://github.com/MicheleZito/Ant_Colony_Optimization_for_Shortest_Path_Problem>. Acesso em: 25 Novembro 2024.
