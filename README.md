@@ -66,7 +66,7 @@ Recomenda-se o uso do sistema operacional Linux ou alguma distribuição baseada
 
 ## Vídeo
 
-Apresentação final do Artigo e d o projeto:
+Apresentação final do Artigo e do projeto:
 [Apresentação](https://youtu.be/mWgfeyMcyHs)
 
 ## Participações
